@@ -277,11 +277,15 @@
                 // y 设置垂直安放位置，默认全图顶端，可选值：'top' ¦ 'bottom' ¦ 'center' ¦ {number}（y坐标，单位px）
                 y: '30px',
                 data: ['进店车辆', '离店车辆'],
-                textStyle: {
+                textStyle: [{
                     color: "#8BD7FF",
                     fontSize: 14,
                     padding: [0, 0, 0, 0]
-                },
+                },{
+                    color: "#fff",
+                    fontSize: 14,
+                    padding: [0, 0, 0, 0]
+                },]
             },
 
             //  图表距边框的距离,可选值：'百分比'¦ {number}（单位px）
@@ -392,9 +396,11 @@
                     500,
                     function () {
                         /* stuff to do after animation is complete */
-                        $(this).css({
+                 
+                        $(this).children("li:first").appendTo(this)
+                        $(this).animate({
                             "marginTop": 0
-                        }).children("li:first").appendTo(this);
+                        },0);
                     });
             }
             $("#scrollul").hover(function () {
