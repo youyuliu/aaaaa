@@ -235,11 +235,13 @@ body {
     width: calc(100% - 120px);
     overflow: hidden;
     margin: 0 60px;
+    position: relative;
 }
 
 #content>.right .top .scrollulContainer ul {
     height: 100%;
     width: 150%;
+    position: absolute;
 }
 
 #content>.right .top ul>li {
