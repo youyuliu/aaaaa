@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="915" height="457" viewBox="0 0 915 457">
+  <defs>
+    <polygon id="bg_samll2-a" points="0 0 915 0 915 457 0 457"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <use fill="#006FFF" fill-opacity=".1" xlink:href="#bg_samll2-a"/>
+    <path stroke="#8CBAE5" stroke-opacity=".15" stroke-width="2" d="M1,1 L1,456 L914,456 L914,1 L1,1 Z"/>
+    <g stroke="#659CE3" stroke-linecap="square" stroke-width="2">
+      <path d="M1 1L41 1M1 1L1 41"/>
+    </g>
+    <g stroke="#659CE3" stroke-linecap="square" stroke-width="2" transform="matrix(1 0 0 -1 0 457)">
+      <path d="M1 1L41 1M1 1L1 41"/>
+    </g>
+    <g stroke="#659CE3" stroke-linecap="square" stroke-width="2" transform="matrix(-1 0 0 1 915 0)">
+      <path d="M1 1L41 1M1 1L1 41"/>
+    </g>
+    <g stroke="#659CE3" stroke-linecap="square" stroke-width="2" transform="rotate(180 457.5 228.5)">
+      <path d="M1 1L41 1M1 1L1 41"/>
+    </g>
+  </g>
+</svg>

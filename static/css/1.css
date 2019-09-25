@@ -1,0 +1,230 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../imgs/bg.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular;
+}
+
+#container {
+    width: 1920px !important;
+    height: 1080px !important;
+    padding-top:40px;
+}
+
+#header {
+    width: 100%;
+    height: 106px;
+    background: url(../imgs/headerbg.png) no-repeat center;
+    text-align: center;
+    letter-spacing: 0;
+    /* margin-top:40px; */
+}
+
+#header .header {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    height: 61px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(0, 228, 254, 1);
+    padding-top: 21px;
+
+}
+
+#header .timer {
+    width: 100%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 45px;
+}
+
+#center {
+    padding: 50px;
+    overflow: hidden;
+    padding-bottom: 0;
+}
+
+#center .left {
+    width: 610px;
+    height: 500px;
+    background-image: url(../imgs/centerleft.png), url(../imgs/bjt.jpg);
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-size: 100%,590px 480px;
+    background-position: 0,10px;
+
+    /* width: 610px;
+    height: 500px;
+    background-image: url(../imgs/centerleft.png), url(../imgs/bjt.jpg);
+    background-repeat: no-repeat, no-repeat, repeat-y;
+    background-size: 100%,610px 500px;
+    background-position: 0,20px 20px; */
+}
+
+#center .right {
+    position: relative;
+    width: 1172px;
+    height: 500px;
+    padding: 60px;
+    background: url(../imgs/centerright.png) no-repeat center;
+}
+
+#footer {
+    overflow: hidden;
+    padding: 50px 50px;
+}
+
+#footer>.left {
+    position: relative;
+    width: 610px;
+    height: 284px;
+    background: url(../imgs/footerleft.png) no-repeat center;
+}
+
+#footer>.right {
+    position: relative;
+    width: 1172px;
+    height: 284px;
+    background: url(../imgs/footerright.png) no-repeat center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    left: 66px;
+    top: -10px;
+    position: absolute;
+    width: 182px;
+    height: 30px;
+    font-size: 30px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+}
+
+#footer .left ul {
+    padding: 0 61px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footer .left ul li {
+    width: 133px;
+    height: 173px;
+    text-align: center;
+    background: url(../imgs/square.png) no-repeat center;
+}
+
+#footer .left ul li .div1 {
+
+    height: 47px;
+    font-size: 60px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 48px;
+    text-align: center;
+    margin: 27px 0;
+}
+
+#footer .left ul li .div2 {
+    height: 26px;
+    font-size: 26px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 48px;
+}
+
+#footer .right .left {
+    height: 100%;
+    width: 50%;
+    /* background: rgba(0, 228, 254, 0.1); */
+}
+
+#footer .right .right {
+    height: 100%;
+    width: 50%;
+    /* background: rgba(0, 228, 254, 0.1); */
+}
+
+#tableHeader {
+    overflow: hidden;
+}
+
+#tableHeader>li {
+    float: left;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 219, 244, 1);
+}
+
+.tr1 {
+    padding-left: 30px;
+    float: left;
+    width: 30%;
+}
+
+.tr2 {
+    float: left;
+    width: 20%;
+}
+
+.tr3 {
+    float: left;
+    width: 20%;
+}
+
+.tr4 {
+    float: left;
+    width: 15%;
+}
+
+.tr5 {
+    float: left;
+    width: 15%;
+}
+
+.scrollContainer {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+#scrollul {
+    float: left;
+    width: 100%;
+    height: 375px;
+}
+
+#scrollul>li {
+    width: 100%;
+    float: left;
+
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 28px;
+    background:url(../imgs/scrollitemnbg.png) no-repeat;
+
+    height: 82px;
+    line-height: 82px;
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 1);
+
+
+}

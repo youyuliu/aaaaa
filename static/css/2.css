@@ -1,0 +1,282 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../imgs/bg.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular;
+}
+
+#container {
+    width: 1920px !important;
+    height: 1080px !important;
+    padding-top: 40px;
+}
+
+#header {
+    width: 100%;
+    height: 106px;
+    background: url(../imgs/headerbg.png) no-repeat center;
+    /* margin-top:40px; */
+    text-align: center;
+    letter-spacing: 0;
+}
+
+#header .header {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    height: 61px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(0, 228, 254, 1);
+    padding-top: 21px;
+
+}
+
+#header .timer {
+    width: 100%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 45px;
+}
+
+#content {
+    width: 100%;
+    padding: 50px 50px 50px 46px;
+}
+
+#content>.left {
+    position: relative;
+    width: 610px;
+    height: 835px;
+    background: url(../imgs/vip/vipperson.png) no-repeat;
+    padding: 70px;
+}
+
+#content>.right {
+    position: relative;
+    width: 1172px;
+    height: 835px;
+    background: url(../imgs/vip/vipinout.png) no-repeat;
+}
+
+.info {
+    left: 69px;
+    top: -10px;
+    position: absolute;
+    width: 182px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+}
+
+.vipinfo {
+    width: 100%;
+    height: 100%;
+}
+
+.vipinfo .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.vipinfo .top .li1 {
+    width: 145px;
+    height: 145px;
+}
+
+.vipinfo .top .li2 {
+    width: 145px;
+    height: 145px;
+}
+
+.vipinfo .top .li2 #comparecircle {
+    height: 103px;
+    width:103px;
+    margin:0 auto;
+
+}
+
+.vipinfo .top .li2 .echartTitle {
+    height: 42px;
+    line-height: 42px;
+
+    font-size: 22px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 48px;
+    text-align: center;
+}
+
+.vipinfo .top .li3 {
+    width: 145px;
+    height: 145px;
+}
+
+.vipinfo .top li img {
+    width: 100%;
+    height: 100%;
+
+}
+
+.vipinfo .bottom {
+    width: 470px;
+    height: 500px;
+    margin-top: 50px;
+    background: url(../imgs/vip/vipinfobg.png)
+}
+
+
+
+
+.vipinfo h1 .infolist-item {
+    clear: both;
+}
+
+.vipinfo h1 .infolist-label {
+    float: left;
+    display: block;
+    width: 223px;
+    font-size: 40px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    text-align: right;
+    line-height: 36px;
+    height: 110px;
+    line-height: 110px;
+}
+
+.vipinfo h1 .infolist-block {
+    margin-left: 223px;
+    font-size: 40px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 36px;
+    height: 110px;
+    line-height: 110px;
+}
+
+.vipinfo .infolist {
+    padding-top: 10px;
+}
+
+.vipinfo .infolist .infolist-item {
+    clear: both;
+}
+
+.vipinfo .infolist .infolist-label {
+    float: left;
+    display: block;
+    width: 223px;
+    font-weight: 400;
+    text-align: right;
+    font-size: 26px;
+    line-height: 47px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.vipinfo .infolist .infolist-block {
+    margin-left: 223px;
+    font-size: 26px;
+    line-height: 47px;
+    color: #fff;
+    font-weight: 400;
+}
+
+.vipinfo h1 {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+}
+
+
+
+#tableHeader {
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+#tableHeader>li {
+    float: left;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 219, 244, 1);
+}
+
+.tr1 {
+    padding-left: 30px;
+    float: left;
+    width: 25%;
+}
+.tr1 img{
+    padding-right:30px;
+}
+.tr2 {
+    float: left;
+    width: 15%;
+}
+
+.tr3 {
+    float: left;
+    width: 15%;
+}
+
+.tr4 {
+    float: left;
+    width: 15%;
+}
+
+.tr5 {
+    float: left;
+    width: 15%;
+}
+
+.tr6 {
+    float: left;
+    width: 15%;
+}
+
+.scrollContainer {
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+#scrollul {
+    float: left;
+    width: 100%;
+    height: 680px;
+}
+
+#scrollul>li {
+    width: 100%;
+    float: left;
+
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 28px;
+    background: url(../imgs/vip/scrollitem.png) no-repeat;
+
+    height: 102px;
+    line-height: 102px;
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 1);
+}
+
+#content .right {
+    padding: 50px 60px 41px 61px;
+}

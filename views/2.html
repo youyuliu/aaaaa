@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VIP客户信息看板 </title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/2.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="header">VIP客户信息看板</div>
+            <div class="timer">2019-09-12 18:20:20</div>
+        </div>
+        <div id="content">
+            <div class="left fl">
+                <div class="info">
+                    VIP人像识别
+                </div>
+
+                <div class="vipinfo">
+                    <ul class="top">
+                        <li class="li1"><img src="../static/imgs/employee/touxiang.png" alt=""></li>
+                        <li class="li2" id="">
+                            <div id="comparecircle">
+
+                            </div>
+                            <div class="echartTitle">
+                                相似度
+                            </div>
+                        </li>
+                        <li class="li3"><img src="../static/imgs/employee/touxiang.png" alt=""></li>
+                    </ul>
+                    <div class="bottom">
+                        <h1>
+                            <div class="infolist-item">
+                                <label class="infolist-label">姓名:</label>
+                                <div class="infolist-block">
+                                    张三
+                                </div>
+                            </div>
+                        </h1>
+                        <div class="infolist">
+                            <div class="infolist-item">
+                                <label class="infolist-label">性别：</label>
+                                <div class="infolist-block">
+                                    女
+                                </div>
+                            </div>
+                            <div class="infolist-item">
+                                <label class="infolist-label">出入情况：</label>
+                                <div class="infolist-block">
+                                    进入
+                                </div>
+                            </div>
+                            <div class="infolist-item">
+                                <label class="infolist-label">出入时间：</label>
+                                <div class="infolist-block">
+                                    18:20:20
+                                </div>
+                            </div>
+                            <div class="infolist-item">
+                                <label class="infolist-label">业务办理：</label>
+                                <div class="infolist-block">
+                                    车辆抛光
+                                </div>
+                            </div>
+                            <div class="infolist-item">
+                                <label class="infolist-label">接待人员：</label>
+                                <div class="infolist-block">
+                                    马六
+                                </div>
+                            </div>
+                            <div class="infolist-item">
+                                <label class="infolist-label">车牌号：</label>
+                                <div class="infolist-block">
+                                    京AY8255
+                                </div>
+                                <div class="infolist-block">
+                                    京AY8255
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right fr">
+                <div class="info">
+                    VIP出入识别
+                </div>
+
+
+                <ul id="tableHeader">
+                    <li class="tr1">图像对比</li>
+                    <li class="tr2">相似度</li>
+                    <li class="tr3">姓名</li>
+                    <li class="tr4">性别</li>
+                    <li class="tr5">出入情况</li>
+                    <li class="tr6">出入时间</li>
+                </ul>
+                <div class="scrollContainer">
+
+                    <ul id="scrollul">
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">1%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">2%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">3%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">4%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">5%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">6%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">7%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">8%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">9%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">10%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="tr1"><img src="../static/imgs/employee/touxiang.png" alt=""><img
+                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr2">11%</li>
+                                <li class="tr3">张三</li>
+                                <li class="tr4">男</li>
+                                <li class="tr5">进入</li>
+                                <li class="tr6">12:20:20</li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/plugins/jquery-1.9.1.min.js"></script>
+    <script src="../static/plugins/echarts.js"></script>
+    <script>
+        $(function () {
+            var timeId = setInterval(play, 3000);
+
+            function play() {
+                $("#scrollul").animate({
+                        "marginTop": "-102px"
+                    },
+                    1000,
+                    function () {
+                        /* stuff to do after animation is complete */
+                        $(this).css({
+                            "marginTop": 0
+                        }).children("li:first").appendTo(this);
+                    });
+            }
+            $("#scrollul").hover(function () {
+                /* Stuff to do when the mouse enters the element */
+                clearInterval(timeId);
+            }, function () {
+                /* Stuff to do when the mouse leaves the element */
+                timeId = setInterval(play, 3000);
+            });
+        })
+
+
+
+        var faultPieEchart = echarts.init(document.getElementById('comparecircle')); //初始化echarts实例
+        // var faultPieOption = {
+        //     // legend: {
+        //     //     data: ['已报名', '未报名'],
+        //     //     icon: 'rect',
+        //     //     top: 100,
+        //     //     right: '14.17004%',
+        //     //     itemGap: 35,
+        //     //     itemWidth: 10,
+        //     //     itemHeight: 10,
+        //     //     orient: 'vertical',
+        //     //     textStyle: {
+        //     //         padding: [0, 0, 0, 5],
+        //     //         color: 'rgba(255,255,255,0.87)'
+        //     //     }
+        //     // },
+        //     // tooltip: {
+        //     //     trigger: 'item',
+        //     //     formatter: "{b} : <br>{c}起({d}%)",
+        //     //     backgroundColor: 'rgba(0,0,0,0.3)', // 背景
+        //     //     padding: [8, 10], //内边距
+        //     //     extraCssText: 'box-shadow: 0 0 3px rgba(255, 255, 255, 0.87);', //添加阴影
+        //     // },
+        //     color: ['#289df5', '#ff5050'],
+        //     series: [{
+        //         type: 'pie',
+        //         radius: ['80%', '62%'],
+        //         center: ['40%', '60%'],
+        //         label: {
+        //             normal: {
+        //                 position: 'center'
+        //             }
+        //         },
+        //         data: [{
+        //             value: 42,
+        //             name: '已报名',
+        //             label: {
+        //                 normal: {
+        //                     formatter: '{c}',
+        //                     textStyle: {
+        //                         color: '#fff',
+        //                         fontSize: 33
+        //                     }
+        //                 }
+        //             }
+        //         }, {
+        //             value: 132,
+        //             name: '未报名',
+        //             label: {
+        //                 normal: {
+        //                     formatter: '\n09月数据',
+        //                     textStyle: {
+        //                         color: 'rgba(255,255,255,0.87)',
+        //                         fontSize: 14
+        //                     }
+        //                 }
+        //             }
+        //         }]
+        //     }]
+        // };
+
+
+        var faultPieOption = option = {
+            // backgroundColor: '#091018',
+            series: {
+                type: 'pie',
+                clockWise: false,
+                hoverAnimation: false,
+                silent: true,
+                radius: ['100%', '93%'],
+                center: ['50%', '50%'],
+                data: [{
+                    value: 75,
+                    name: 'invisible',
+                    itemStyle: {
+                        normal: {
+                            color: '#00e4fe',
+                            borderWidth: 1,
+                            borderColor: '#073A66',
+                            opacity: 0.2
+                        }
+                    },
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                }, {
+                    value: 25,
+                    labelLine: {
+                        normal: {
+                            show: false
+                        }
+                    },
+                    label: {
+                        normal: {
+                            rich: {
+                                a: {
+                                    color: '#fff',
+                                    align: 'center',
+                                    fontSize: 29,
+                                    fontFamily: 'Microsoft YaHei',
+                                    fontWeight: "bold",
+                                },
+                                c: {
+                                    color: '#fff',
+                                    fontSize: 29,
+                                    fontFamily: 'Microsoft YaHei',
+                                    fontWeight: "bold"
+                                }
+                            },
+                            formatter: function (params) {
+                                return "{a|" + params.value + "}" + " {c|%}";
+                            },
+                            position: 'center',
+                            show: true,
+                            textStyle: {
+                                fontSize: '14',
+                                fontWeight: 'normal',
+                                color: '#fff'
+                            }
+                        }
+                    },
+                    itemStyle: {
+                        normal: {
+                            color: '#00e4fe',
+                        }
+                    }
+                }]
+            }
+        }
+        faultPieEchart.setOption(faultPieOption)
+    </script>
+</body>
+
+</html>

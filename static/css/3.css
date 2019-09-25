@@ -1,0 +1,318 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../imgs/bg.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular;
+}
+
+#container {
+    width: 1920px !important;
+    height: 1080px !important;
+    padding-top: 40px;
+}
+
+#header {
+    width: 100%;
+    height: 106px;
+    background: url(../imgs/headerbg.png) no-repeat center;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+#header .header {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    height: 61px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(0, 228, 254, 1);
+    padding-top: 21px;
+
+}
+
+#header .timer {
+    width: 100%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 45px;
+}
+
+#content {
+    width: 100%;
+    padding: 50px 50px 0px 46px;
+    overflow: hidden;
+}
+
+#content>.left {
+    width: 610px;
+    height: 835px;
+    background: url(../imgs/employee/leftbg.png) no-repeat;
+    padding: 10px;
+}
+
+#content>.right {
+    position: relative;
+    width: 1172px;
+    height: 835px;
+}
+
+.imgcontainer {
+    position: relative;
+    z-index: -1;
+    width: 590px;
+    height: 480px;
+}
+
+.identifyInfo {
+    font-size: 30px;
+    line-height: 120px;
+    height: 120px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    padding: 0 15px 0 19px;
+    background: url(../imgs/employee/employtitle.png) 210px center no-repeat;
+}
+
+.imgcontainer img {
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.identifyInfoContainer {
+    padding: 0 15px 0 19px;
+}
+
+.imgcontainer2 {
+    float: left;
+    width: 145px;
+    height: 145px;
+}
+
+.identifyInfoContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.employInfo {
+    padding-left: 160px;
+    /* background: gold; */
+    width: 100%;
+    height: 145px;
+}
+
+.employInfo>ul>li {
+    display: flex;
+}
+
+.employInfo>ul>li>div {
+    width: 50%;
+    font-size: 22px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 36px;
+}
+
+.employInfo>ul>li>div.name {
+    width: 50%;
+    font-size: 26px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 36px;
+}
+
+#content>.right .top {
+    position: relative;
+    width: 1172px;
+    height: 500px;
+    background: url(../imgs/employee/rightbg1.png) no-repeat;
+    /* background: url(../imgs/vip/vipinout.png) no-repeat; */
+
+}
+
+#content>.right .bottom {
+    position: relative;
+    width: 1172px;
+    height: 284px;
+    background: url(../imgs/employee/rightbg2.png) no-repeat;
+    margin-top: 51px;
+    /* background: url(../imgs/vip/vipinout.png) no-repeat; */
+
+}
+
+
+.info {
+    left: 69px;
+    top: -10px;
+    position: absolute;
+    width: 182px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+}
+
+#content>.right .bottom ul {
+    width: 1172px;
+    height: 284px;
+    display: flex;
+}
+
+#content>.right .bottom ul .li1 {
+    width: 242px;
+    height: 192px;
+    margin: 51px 0 41px 61px;
+    background: url(../imgs/employee/persontime.png)
+}
+
+#content>.right .bottom ul .li2 {
+    width: 242px;
+    height: 192px;
+    margin: 51px 0 41px 31px;
+    background: url(../imgs/employee/persontime.png)
+}
+
+#content>.right .bottom ul .li1 h1 {
+    margin-top: 39px;
+    font-size: 70px;
+    text-align: center;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 39px;
+}
+
+#content>.right .bottom ul .li1 div {
+    text-align: center;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 48px;
+    margin-top: 28px;
+}
+
+#content>.right .bottom ul .li2 h1 {
+    margin-top: 39px;
+    font-size: 70px;
+    text-align: center;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 39px;
+}
+
+#content>.right .bottom ul .li2 div {
+    text-align: center;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 48px;
+    margin-top: 28px;
+}
+
+#content>.right .bottom ul .li3 {
+    flex: auto;
+    padding: 50px 30px 20px 30px;
+}
+
+#content>.right .top .scrollulContainer {
+    height: 100%;
+    width: calc(100% - 120px);
+    overflow: hidden;
+    margin: 0 60px;
+}
+
+#content>.right .top .scrollulContainer ul {
+    height: 100%;
+    width: 150%;
+}
+
+#content>.right .top ul>li {
+    position: relative;
+    width: 312px;
+    height: 410px;
+    float: left;
+    margin-left: 60px;
+    margin-top: 56px;
+    background: url(../imgs/employee/scrollItembg.png)
+}
+
+#content>.right .top ul>li .doorNumber {
+    position: absolute;
+    height: 23px;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    top: -10px;
+    left: 117px;
+    height: 40px;
+    line-height: 40px;
+    top: -21px;
+}
+
+#content>.right .top #scrollul li:nth-of-type(1) {
+    margin-left: 0px !important;
+}
+
+.doorInfo {
+    height: 100%;
+    width: 100%;
+
+}
+
+.doorInfo .imgContainer {
+    width: 83px;
+    height: 83px;
+    margin-left: 54px;
+}
+
+.doorInfo>div {
+    height: 33.3%;
+    background: url(../imgs/employee/linebg.png) bottom no-repeat;
+    padding-top: 29px;
+}
+
+.doorInfo>div:nth-of-type(3) {
+    background: none;
+}
+
+.doorInfo .imgContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.doorInfo .line {
+    height: 81px;
+    width: 1px;
+    margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.doorInfo>div>div {
+    float: left;
+}
+
+.doorInfoText span {
+    display: block;
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 27px;
+}

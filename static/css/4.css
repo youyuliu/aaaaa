@@ -1,0 +1,336 @@
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: url(../imgs/bg.png) no-repeat;
+    width: 100%;
+    height: 100%;
+    font-family: PingFangSC-Regular;
+}
+
+#container {
+    width: 1920px !important;
+    height: 1080px !important;
+    padding-top: 40px;
+}
+
+#header {
+    width: 100%;
+    height: 106px;
+    background: url(../imgs/headerbg.png) no-repeat center;
+    text-align: center;
+    letter-spacing: 0;
+}
+
+#header .header {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    height: 61px;
+    font-family: Microsoft YaHei;
+    font-weight: bold;
+    color: rgba(0, 228, 254, 1);
+    padding-top: 21px;
+
+}
+
+#header .timer {
+    width: 100%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 45px;
+}
+
+#content {
+    width: 100%;
+    padding: 50px 50px 0px 46px;
+    overflow: hidden;
+}
+
+#content>.left {
+    width: 610px;
+    height: 835px;
+    background: url(../imgs/employee/leftbg.png) no-repeat;
+    padding: 10px;
+}
+
+#content>.right {
+    position: relative;
+    width: 1172px;
+    height: 835px;
+    
+}
+
+.imgcontainer {
+    position: relative;
+    z-index: -1;
+    width: 590px;
+    height: 480px;
+}
+
+.identifyInfo {
+    font-size: 30px;
+    line-height: 120px;
+    height: 120px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    padding: 0 15px 0 19px;
+    background: url(../imgs/employee/employtitle.png) 210px center no-repeat;
+}
+
+.imgcontainer img {
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.identifyInfoContainer {
+    padding: 0 15px 0 19px;
+}
+
+.imgcontainer2 {
+    float: left;
+    width: 145px;
+    height: 145px;
+}
+
+.identifyInfoContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.employInfo {
+    padding-left: 160px;
+    /* background: gold; */
+    width: 100%;
+    height: 145px;
+}
+
+.employInfo>ul>li {
+    display: flex;
+}
+
+.employInfo>ul>li>div {
+    width: 50%;
+    font-size: 22px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 1);
+    line-height: 36px;
+}
+
+.employInfo>ul>li>div.name {
+    width: 50%;
+    font-size: 26px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 36px;
+}
+
+#content>.right .top {
+    position: relative;
+    width: 1172px;
+    height: 500px;
+    background: url(../imgs/employee/rightbg1.png) no-repeat;
+    /* background: url(../imgs/vip/vipinout.png) no-repeat; */
+    padding: 60px;
+
+}
+
+#content>.right .bottom {
+    position: relative;
+    width: 1172px;
+    height: 284px;
+    margin-top: 51px;
+    /* background: url(../imgs/vip/vipinout.png) no-repeat; */
+
+}
+
+
+.info {
+    left: 69px;
+    top: -10px;
+    position: absolute;
+    width: 182px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+}
+
+.right .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.right .bottom .left {
+    width: 560px;
+    height: 284px;
+    position: relative;
+    background: url(../imgs/statisticsbg.png) no-repeat;
+
+}
+
+.right .bottom ul {
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 63px;
+}
+
+.right .bottom .right {
+    width: 560px;
+    height: 284px;
+    position: relative;
+    background: url(../imgs/statisticsbg.png) no-repeat;
+}
+
+.right .bottom .left ul .li1 h1 {
+    text-align: center;
+    margin-top: 37px;
+    font-size:60px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+.right .bottom .left ul .li1 div {
+    text-align: center;
+    font-size:26px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+.right .bottom .left ul .li2 h1 {
+    text-align: center;
+    margin-top: 37px;
+    font-size:60px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+.right .bottom .left ul .li2 div {
+    text-align: center;
+    font-size:26px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+.right .bottom .left ul .li3 h1 {
+    text-align: center;
+    margin-top: 37px;
+    font-size:60px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+.right .bottom .left ul .li3 div {
+    text-align: center;
+    font-size:26px;
+    line-height: 60px;
+    font-family:Microsoft YaHei;
+    font-weight:400;
+    color:rgba(255,255,255,1);
+}
+
+
+.right .bottom .left ul>li{
+    width:133px;
+    height:173px;
+    background:url(../imgs/client/reachstorebg.png)
+}   
+
+
+.echartsContainer{
+    width:100%;
+    height:100%;
+}
+
+#tableHeader {
+    overflow: hidden;
+}
+
+#tableHeader>li {
+    float: left;
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 219, 244, 1);
+}
+
+.tr1 {
+    padding-left: 30px;
+    float: left;
+    width: 30%;
+}
+
+.tr2 {
+    float: left;
+    width: 20%;
+}
+
+.tr3 {
+    float: left;
+    width: 20%;
+}
+
+.tr4 {
+    float: left;
+    width: 15%;
+}
+
+.tr5 {
+    float: left;
+    width: 15%;
+}
+
+.scrollContainer {
+    width: 100%;
+    height: 375px;
+    overflow: hidden;
+    padding-bottom: 60px;
+}
+
+#scrollul {
+    float: left;
+    width: 100%;
+    height: 375px;
+}
+
+#scrollul>li {
+    width: 100%;
+    float: left;
+
+    font-size: 28px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    line-height: 28px;
+    background:url(../imgs/scrollitemnbg.png) no-repeat;
+
+    height: 82px;
+    line-height: 82px;
+    margin: 6px 0;
+    color: rgba(255, 255, 255, 1);
+
+
+}
