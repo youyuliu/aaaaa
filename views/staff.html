@@ -24,30 +24,32 @@
                 </div>
                 <div class="identifyInfo">
                     识别员工信息
+
                 </div>
                 <div class="identifyInfoContainer">
                     <div class="imgcontainer2">
-                        <img src="../static/imgs/employee/datouxiang.png" alt="">
+                    <img :src="lastedArrive.faceUrl" alt="">
                     </div>
                     <div class="employInfo">
                         <ul>
                             <li class="li1">
-                                <div class="name"><span>姓名：</span><span>张三</span></div>
-                                <div><span class="icon font_family icon-nv"></span><span
-                                        class="icon font_family icon-nan"></span></div>
+                                <div class="name"><span>姓名：</span><span v-text="lastedArrive.appointment"></span></div>
+                                <div><span class="icon font_family icon-nv" v-if="lastedArrive.sex===2"
+                                        v-clock></span><span class="icon font_family icon-nan"
+                                        v-if="lastedArrive.sex===1" v-clock></span></div>
                             </li>
                             <li class="li2">
 
                             </li>
                             <li class="li3">
-                                <div><span>年龄：</span><span>36</span></div>
-                                <div><span>职务：</span><span>销售经理</span></div>
+                                <div><span>预约情况：</span><span v-text="lastedArrive.appointment"></span></div>
+                                <div><span>到店类型：</span><span>二次到店</span></div>
 
                             </li>
                             <li class="li4">
 
-                                <div><span>行为识别：</span><span>进入</span></div>
-                                <div><span>时间：</span><span></span>18:20:20</div>
+                                <div><span>行为识别：</span><span v-text="lastedArrive.actionType"></span></div>
+                                <div><span>时间：</span><span></span v-text="lastedArrive.dateTime"></div>
                             </li>
                         </ul>
                     </div>
@@ -282,163 +284,16 @@
     </div>
     <script src="../static/plugins/jquery-1.9.1.min.js"></script>
     <script src="../static/plugins/echarts.js"></script>
+    <script src="../static/plugins/vue.min.js"></script>
+
+
+    <script src="../static/scripts/common/global.js"></script>
+    <script src="../static/scripts/common/utils.js"></script>
+    <script src="../static/scripts/staff.js"></script>
     <script type="text/javascript">
-        var option = {
-            title: {
-                show: true,
-                text: '人',
-                textStyle: {
-                    fontSize: 12,
-                    color: '#fff',
-                },
-                top: "14",
-                left: "70px"
-            },
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'shadow'
-                }
-            },
-            legend: {
-                right: 30,
-                top: 10,
-                show: true,
-                padding: [0, 0, 0, 0],
-                // 单独设置每一项为圆形
-                data: [{
-                    name: '入店人次',
-                    // 强制设置图形为圆。
-                    icon: 'circle',
-
-                }, {
-                    name: '出店人次',
-                    // 强制设置图形为圆。
-                    icon: 'circle',
-
-                }],
-                itemWidth: 10,
-                itemHeight: 10,
-                borderRadius: 5,
-                textStyle: {
-                    color: "#00E4FE",
-                    fontSize: 14,
-                    padding: [0, 10, 0, 0]
-                },
-            },
-            grid: {
-                left: "39px",
-                right: "30px",
-                bottom: "20px",
-                top: "25px",
-                containLabel: true
-            },
-            xAxis: [{
-                type: 'category',
-                data: ['一号门',
-                    '二号门',
-                    '三号门',
-                ], // 只有type: 'category'生效
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        color: "#fff",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-                axisTick: {
-                    show: false,
-                    alignWithLabel: true
-                },
-                axisLabel: {
-                    show: true,
-                    textStyle: {
-                        color: "#fff",
-                    }
-                },
-            }],
-            yAxis: [{
-                type: 'value',
-                splitNumber: 4, // type: 'category'不生效
-                axisLabel: {
-                    formatter: '{value} '
-                },
-                axisLine: {
-                    show: false,
-                    lineStyle: {
-                        color: "#fff",
-                        width: 1,
-                        type: "solid"
-                    },
-                },
-                axisTick: {
-                    show: false,
-                    alignWithLabel: true
-                },
-                splitLine: {
-                    lineStyle: {
-                        color: "rgba(128, 128, 128, 0.25)",
-                    }
-                },
-                // min: function(value) {
-                //     return value.min - 10;
-                // }
-            }],
-            series: [{
-                    name: "入店人次",
-                    type: 'bar',
-                    data: [20, 250, 80],
-                    barWidth: 40, //柱子宽度
-                    //barGap: 1, //柱子之间间距
-                    itemStyle: {
-                        normal: {
-                            color: "#F88CF8",
-                        }
-                    }
-                },
-                {
-                    name: "出店人次",
-                    type: 'bar',
-                    data: [120, 502, 802],
-                    barWidth: 40, //柱子宽度
-                    //barGap: 1, //柱子之间间距
-                    itemStyle: {
-                        normal: {
-                            color: "#86D0FF",
-                        }
-                    }
-                },
-            ]
-        };
-        var echart = echarts.init(document.querySelector("#echartsContainer"));
-        echart.setOption(option);
 
 
 
-        $(function () {
-            var timeId = setInterval(play, 3000);
-
-            function play() {
-                $("#scrollul").animate({
-                        "marginLeft": "-300px"
-                    },
-                    100,
-                    function () {
-                        /* stuff to do after animation is complete */
-                        $(this).css({
-                            "marginLeft": 0
-                        }).children("li:first").appendTo(this);
-                    });
-            }
-            $("#scrollul").hover(function () {
-                /* Stuff to do when the mouse enters the element */
-                clearInterval(timeId);
-            }, function () {
-                /* Stuff to do when the mouse leaves the element */
-                timeId = setInterval(play, 3000);
-            });
-        })
     </script>
 </body>
 

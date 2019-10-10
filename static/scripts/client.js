@@ -8,7 +8,12 @@ ClientModule = (function ($, window, document, echarts) {
         thisContext = this;
         this.init = function () {
             this.initVue();
-            this.initData();
+
+            thisContext.initData();
+
+            
+            thisContext.initEcharts();
+            this.initScroll();
 
         }
     }
@@ -54,13 +59,104 @@ ClientModule = (function ($, window, document, echarts) {
                         inOut: '3dfa',
                         time: "2019:12:11"
                     }],
+                    // 客户识别列表
 
+                    scrollUlData: [{
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 0,
+                        "todayCount": 0
+                    }, ],
                     // 到店统计
                     arriveStore: {
                         "appointmentCount": 1,
                         "moreCount": 1,
                         "totalCount": 1
                     },
+                    lastedArrive: {
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "2019.12.09",
+                        "faceUrl": "../static/imgs/employee/datouxiang.png",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "fafafa",
+                        "sex": 2, //1男2女
+                        "todayCount": 0
+                    }
 
                 }
             })
@@ -77,7 +173,6 @@ ClientModule = (function ($, window, document, echarts) {
                 },
                 async: false,
                 success: function (res) {
-                    debugger;
                     if (res.code === 0) {
                         vm.arriveStore = res.data;
                     }
@@ -93,7 +188,21 @@ ClientModule = (function ($, window, document, echarts) {
                     companyId: companyId
                 },
                 async: false,
-                success: function (data) {
+                success: function (res) {
+
+
+                    res.results = [{
+                        "actionType": '0',
+                        "appointment": true,
+                        "dateTime": "",
+                        "faceUrl": "",
+                        "frameUrl": "",
+                        "maxScore": 0,
+                        "more": true,
+                        "name": "",
+                        "sex": 0,
+                        "todayCount": 0
+                    }]
 
                 }
             });
@@ -125,12 +234,6 @@ ClientModule = (function ($, window, document, echarts) {
 
                 }
             });
-
-
-
-
-            thisContext.initEcharts();
-            this.initScroll();
         },
         initEcharts: function () {
 
@@ -262,6 +365,25 @@ ClientModule = (function ($, window, document, echarts) {
             };
             var eChart = echarts.init(document.querySelector("#eCharts"));
             eChart.setOption(option);
+
+
+
+            var changeOptions = {
+                series: [{
+                        data: [222, 222, 222, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29,
+                            30,
+                            14, 10, 130,
+                        ],
+                    },
+                    {
+                        data: [222, 222, 222, 31, 14, 12, 133, 80, 32, 01, 34, 29, 130, 82, 92, 31, 14, 90, 10, 82, 93,
+                            30,
+                            14, 10, 130,
+                        ],
+                    },
+                ],
+            }
+            eChart.setOption(changeOptions)
         },
         initScroll: function () {
             $(function () {
