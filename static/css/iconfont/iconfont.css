@@ -1,0 +1,25 @@
+@font-face {font-family: "font_family";
+  src: url('iconfont.eot?t=1569404409260'); /* IE9 */
+  src: url('iconfont.eot?t=1569404409260#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAO8AAsAAAAAB/AAAANtAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqDQIMmATYCJAMMCwgABCAFhREHMhsEBxFVlMFkPw5jx3Tmj2+myWK3kdWDESTXICpd2aPVne+lRwYDcUagNyBFFLkcAkKMGLESIIBx/9eGtCtpIWGej671dDv79nZDNHRaJnUoifk/ZrrE+UA+CKw6KcN4zyPaCmSAFbzdnZjfQ7y6uB3mbAhgEEk6Ut/Y3hcXOqSRADJ10oRRuFI89JpgwYXgLOmpIxtx4NJWabeBDf7l5SO54gINh4LM1XN8w1iq3xS/KVGWbTFUWVjjSQChHyggHdBB+pfKeqJCWzoKQ7PpxMO6Kgm8KbFt3hS7uNX+wwNBA3FCAt0BSEaqdkZ4m8ap4bEPGgAKACc4NoEHiPTfkEJ553p7u8fN87z8OFo/9KTB69qzOMfhpwOtI6uPBUrfo08irMdkLcN4+rT/s2cDzDVPSgb03X5sz3FzTED3NgIsM8DFWO8NGGk8ftz3yZN+5ppb507K06ejUcb2xtdWe/as35qj1hF/g60ThBjbj3UfN00RMJWYJodP0c9F/0c2NTltR1PzyP89m5sdtrO5acY3z7zwOI9T8+YvDGp25sYNqm8clJirxsua1Wo8k1atnair1I4wt7nzT3M/zj3H049u3hIjUo+AaIHLz2lN2rAROJUahg9rFC325tcFsbGJopfWHJSeIX7eEuHLpKZfvxqqcdFSI9Xkan4k+vWPu+8ZFx57f1cfz9gIP48+u+9Dq1jPXcU9PSbMlL4ybP78YQ5ZGAwu03fCjJ6exYwEwLaUrSz/LwQQiDO//03gtfq7TB2AFycOv0BrWzrtBbjuVC7w1/Atc3SdCUvXVZyNMxWK3m9BogFiRCU2ROXr258R0DoQBJOAGGj0IBooTJKgOjIX6kBWQJ3IZmCQZtvfxM9LG9HdgFRvAEKgD9Dw5AFQBPpBdeQf4kBlQp3IGGDQv+mIJomtM+oYI8EU4isUiTVkccVzngwo0oW6bjA7qohzsdGxB+S6sAb6nV6Jc40Gebw29SkbiBAQWw1+g/lQKQuObYmJdHIRt+h2qYzdSXAPDY86DEUESoHYFSgkLINclfBCaPBpIlpBudpAmSMlwvUplHgeIFYjtqY4oK+j1w66ppm2Cdc4Tu0kMyAEAYTBoQF/lGpIUSzgyquVUEJ05D0szkKXFqK2tM7uGfqJU8AUSGclmijRUdMj0zKnRgMAAAA=') format('woff2'),
+  url('iconfont.woff?t=1569404409260') format('woff'),
+  url('iconfont.ttf?t=1569404409260') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1569404409260#font_family') format('svg'); /* iOS 4.1- */
+}
+
+.font_family {
+  font-family: "font_family" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nan:before {
+  content: "\e638";
+}
+
+.icon-nv:before {
+  content: "\e639";
+}
+

@@ -1,0 +1,23 @@
+{
+  "id": "1435320",
+  "name": "看鉴",
+  "font_family": "font_family",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11066745",
+      "name": "nan",
+      "font_class": "nan",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "11066746",
+      "name": "nv",
+      "font_class": "nv",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    }
+  ]
+}

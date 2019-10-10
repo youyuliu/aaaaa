@@ -56,7 +56,7 @@ body {
     width: 610px;
     height: 835px;
     background: url(../imgs/vip/vipperson.png) no-repeat;
-    padding: 70px;
+    padding: 84px 61px 0 61px;
 }
 
 #content>.right {
@@ -90,19 +90,20 @@ body {
 }
 
 .vipinfo .top .li1 {
-    width: 145px;
-    height: 145px;
+    width: 155px;
+    height: 155px;
 }
 
 .vipinfo .top .li2 {
-    width: 145px;
-    height: 145px;
+    width: 155px;
+    height: 155px;
+    padding-top: 10px;
 }
 
 .vipinfo .top .li2 #comparecircle {
     height: 103px;
-    width:103px;
-    margin:0 auto;
+    width: 103px;
+    margin: 0 auto;
 
 }
 
@@ -119,8 +120,8 @@ body {
 }
 
 .vipinfo .top .li3 {
-    width: 145px;
-    height: 145px;
+    width: 155px;
+    height: 155px;
 }
 
 .vipinfo .top li img {
@@ -128,15 +129,6 @@ body {
     height: 100%;
 
 }
-
-.vipinfo .bottom {
-    width: 470px;
-    height: 500px;
-    margin-top: 50px;
-    background: url(../imgs/vip/vipinfobg.png)
-}
-
-
 
 
 .vipinfo h1 .infolist-item {
@@ -146,15 +138,15 @@ body {
 .vipinfo h1 .infolist-label {
     float: left;
     display: block;
-    width: 223px;
+    width: 265px;
     font-size: 40px;
     font-family: Microsoft YaHei;
     font-weight: 400;
     color: rgba(0, 228, 254, 1);
     text-align: right;
     line-height: 36px;
-    height: 110px;
-    line-height: 110px;
+    height: 135px;
+    line-height: 135px;
 }
 
 .vipinfo h1 .infolist-block {
@@ -164,8 +156,8 @@ body {
     font-weight: 400;
     color: rgba(0, 228, 254, 1);
     line-height: 36px;
-    height: 110px;
-    line-height: 110px;
+    height: 135px;
+    line-height: 135px;
 }
 
 .vipinfo .infolist {
@@ -173,13 +165,21 @@ body {
 }
 
 .vipinfo .infolist .infolist-item {
-    clear: both;
+    width:238px;
+    height:123px;
+    float:left;
+    background:url(../imgs/vip/infoitem.png) no-repeat;
+    display: flex;
+    align-items:center;
 }
-
+.vipinfo .infolist .infolist-item:nth-of-type(odd){
+    margin-right:11px;
+    margin-bottom:11px;
+}
 .vipinfo .infolist .infolist-label {
     float: left;
     display: block;
-    width: 223px;
+    width: 100px;
     font-weight: 400;
     text-align: right;
     font-size: 26px;
@@ -189,18 +189,11 @@ body {
 }
 
 .vipinfo .infolist .infolist-block {
-    margin-left: 223px;
     font-size: 26px;
-    line-height: 47px;
+    line-height: 36px;
     color: #fff;
     font-weight: 400;
 }
-
-.vipinfo h1 {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3)
-}
-
-
 
 #tableHeader {
     overflow: hidden;
@@ -220,9 +213,11 @@ body {
     float: left;
     width: 25%;
 }
-.tr1 img{
-    padding-right:30px;
+
+.tr1 img {
+    padding-right: 30px;
 }
+
 .tr2 {
     float: left;
     width: 15%;
@@ -250,7 +245,7 @@ body {
 
 .scrollContainer {
     width: 100%;
-    height: 680px;
+    height: 670px;
     overflow: hidden;
     padding-bottom: 60px;
 }
@@ -273,10 +268,19 @@ body {
 
     height: 102px;
     line-height: 102px;
-    margin: 6px 0;
+    margin: 5px 0;
     color: rgba(255, 255, 255, 1);
 }
 
 #content .right {
     padding: 50px 60px 41px 61px;
+}
+
+#content .bottom h1 {
+    font-size: 40px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 36px;
+
 }

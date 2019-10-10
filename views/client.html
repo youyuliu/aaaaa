@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客户进出信息看板 </title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/client.css">
+    <link rel="stylesheet" href="../static/css/iconfont/iconfont.css">
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="header">客户进出信息看板</div>
+            <div class="timer">2019-09-12 18:20:20</div>
+        </div>
+        <div id="content">
+            <div class="left fl">
+                <div class="imgcontainer">
+                    <img src="../static/imgs/bjt.jpg" alt="" srcset="">
+                </div>
+                <div class="identifyInfo">
+                    识别客户信息
+                </div>
+                <div class="identifyInfoContainer">
+                    <div class="imgcontainer2">
+                        <img src="../static/imgs/employee/datouxiang.png" alt="">
+                    </div>
+                    <div class="employInfo">
+                        <ul>
+                            <li class="li1">
+                                <div class="name"><span>姓名：</span><span>张三</span></div>
+                                <div><span class="icon font_family icon-nv"></span><span
+                                        class="icon font_family icon-nan"></span></div>
+                            </li>
+                            <li class="li2">
+
+                            </li>
+                            <li class="li3">
+                                <div><span>预约情况：</span><span>无预约</span></div>
+                                <div><span>到店类型：</span><span>二次到店</span></div>
+
+                            </li>
+                            <li class="li4">
+
+                                <div><span>行为识别：</span><span>进入</span></div>
+                                <div><span>时间：</span><span></span>18:20:20</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right fr">
+
+                <div class="top">
+                    <div class="info">
+                        客户出入识别
+                    </div>
+
+
+                    <ul id="tableHeader">
+                        <li class="tr1">客户信息</li>
+                        <li class="tr2">到店类型</li>
+                        <li class="tr3">预约情况</li>
+                        <li class="tr4">出入情况</li>
+                        <li class="tr5">出入时间</li>
+                    </ul>
+                    <div class="scrollContainer">
+
+                        <ul id="scrollul">
+                            <li>
+                                <ul>
+                                    <li class="tr1"><img style="width:65px;height:65px;margin-right:30px;"
+                                            src="../static/imgs/employee/touxiang.png" alt="">张三</li>
+                                    <li class="tr2">fafa</li>
+                                    <li class="tr3">预约情况</li>
+                                    <li class="tr4">出入情况</li>
+                                    <li class="tr5">记录时间</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="tr1"><img style="width:65px;height:65px;margin-right:30px;"
+                                            src="../static/imgs/employee/touxiang.png" alt="">22</li>
+                                    <li class="tr2">车主姓名</li>
+                                    <li class="tr3">预约情况</li>
+                                    <li class="tr4">出入情况</li>
+                                    <li class="tr5">记录时间</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="tr1"><img style="width:65px;height:65px;margin-right:30px;"
+                                            src="../static/imgs/employee/touxiang.png" alt="">33</li>
+                                    <li class="tr2">车主姓名</li>
+                                    <li class="tr3">预约情况</li>
+                                    <li class="tr4">出入情况</li>
+                                    <li class="tr5">记录时间</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="tr1"><img style="width:65px;height:65px;margin-right:30px;"
+                                            src="../static/imgs/employee/touxiang.png" alt="">44</li>
+                                    <li class="tr2">车主姓名</li>
+                                    <li class="tr3">预约情况</li>
+                                    <li class="tr4">出入情况</li>
+                                    <li class="tr5">记录时间</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>
+                                    <li class="tr1"><img style="width:65px;height:65px;margin-right:30px;"
+                                            src="../static/imgs/employee/touxiang.png" alt="">55</li>
+                                    <li class="tr2">车主姓名</li>
+                                    <li class="tr3">预约情况</li>
+                                    <li class="tr4">出入情况</li>
+                                    <li class="tr5">记录时间</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="info">
+                            到店统计
+                        </div>
+                        <ul>
+                            <li class='li1'>
+                                <h1><span v-clock>{{arriveStore.appointmentCount}}</span></h1>
+                                <div>今日到店</div>
+                            </li>
+                            <li class='li2'>
+                                <h1><span v-clock>{{arriveStore.moreCount}}</span></h1>
+                                <div>二次到店</div>
+                            </li>
+                            <li class='li3'>
+                                <h1><span v-clock>{{arriveStore.totalCount}}</span></h1>
+                                <div>预约到店</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <div class="info">
+                            客流统计
+                        </div>
+                        <div class="echartsContainer" id='eCharts'>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/plugins/jquery-1.9.1.min.js"></script>
+    <script src="../static/plugins/echarts.js"></script>
+    <script src="../static/plugins/vue.min.js"></script>
+
+
+    <script src="../static/scripts/common/global.js"></script>
+    <script src="../static/scripts/common/utils.js"></script>
+    <script src="../static/scripts/client.js"></script>
+
+    <script>
+
+    </script>
+</body>
+
+</html>

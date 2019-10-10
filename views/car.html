@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>车辆进出信息看板 </title>
+    <link rel="stylesheet" href="../static/css/reset.css">
+    <link rel="stylesheet" href="../static/css/car.css">
+    <style>
+        [v-clock] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="header">
+            <div class="header"><span v-clock>{{message}}</span></div>
+            <div class="timer">2019-09-12 18:20:20</div>
+        </div>
+
+        <div id="center" class="clearfix">
+            <div class="left fl">
+                <img src="../static/imgs/bjt.jpg" alt="" srcset="">
+            </div>
+            <div class="right fr main">
+                <div class="info">
+                    车辆出入识别
+                </div>
+
+                <ul id="tableHeader">
+                    <li class="tr1">车牌号</li>
+                    <li class="tr2">车主姓名</li>
+                    <li class="tr3">预约情况</li>
+                    <li class="tr4">出入情况</li>
+                    <li class="tr5">记录时间</li>
+                </ul>
+                <div class="scrollContainer">
+
+                    <ul id="scrollul">
+                        <li v-for='(item,index) in scrollUlData'>
+                            <ul>
+                                <li class="tr1" v-clock>{{item.number}}</li>
+                                <li class="tr2" v-clock>{{item.name}}</li>
+                                <li class="tr3" v-clock>{{item.appointment}}</li>
+                                <li class="tr4" v-clock>{{item.inOut}}</li>
+                                <li class="tr5" v-clock>{{item.time}}</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div class="left fl">
+                <div class="info">
+                    车辆出入数据
+                </div>
+                <ul>
+                    <li>
+                        <div class="div1">24</div>
+                        <div class="div2">进店车辆</div>
+                    </li>
+                    <li>
+                        <div class="div1">24</div>
+                        <div class="div2">离店车辆</div>
+                    </li>
+                    <li>
+                        <div class="div1">24</div>
+                        <div class="div2">预约车辆</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="right fr">
+                <div class="info">
+                    车辆出入情况
+                </div>
+                <div class="left" id="eChart1">
+
+                </div>
+                <div class="right" id="eChart2">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../static/plugins/jquery-1.9.1.min.js"></script>
+    <script src="../static/plugins/echarts.js"></script>
+    <script src="../static/plugins/vue.min.js"></script>
+    
+    <script src="../static/scripts/car.js"></script>
+
+</body>
+
+</html>

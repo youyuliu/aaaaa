@@ -62,7 +62,6 @@ body {
     position: relative;
     width: 1172px;
     height: 835px;
-    
 }
 
 .imgcontainer {
@@ -114,7 +113,6 @@ body {
 .employInfo>ul>li {
     display: flex;
 }
-
 .employInfo>ul>li>div {
     width: 50%;
     font-size: 22px;
@@ -139,7 +137,6 @@ body {
     height: 500px;
     background: url(../imgs/employee/rightbg1.png) no-repeat;
     /* background: url(../imgs/vip/vipinout.png) no-repeat; */
-    padding: 60px;
 
 }
 
@@ -147,6 +144,7 @@ body {
     position: relative;
     width: 1172px;
     height: 284px;
+    background: url(../imgs/employee/rightbg2.png) no-repeat;
     margin-top: 51px;
     /* background: url(../imgs/vip/vipinout.png) no-repeat; */
 
@@ -166,173 +164,191 @@ body {
     color: rgba(0, 228, 254, 1);
 }
 
-.right .bottom {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-.right .bottom .left {
-    width: 560px;
+#content>.right .bottom ul {
+    width: 1172px;
     height: 284px;
-    position: relative;
-    background: url(../imgs/statisticsbg.png) no-repeat;
-
-}
-
-.right .bottom ul {
-    width:100%;
-    height:100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 63px;
 }
 
-.right .bottom .right {
-    width: 560px;
-    height: 284px;
-    position: relative;
-    background: url(../imgs/statisticsbg.png) no-repeat;
+#content>.right .bottom ul .li1 {
+    width: 242px;
+    height: 192px;
+    margin: 51px 0 41px 61px;
+    background: url(../imgs/employee/persontime.png)
 }
 
-.right .bottom .left ul .li1 h1 {
+#content>.right .bottom ul .li2 {
+    width: 242px;
+    height: 192px;
+    margin: 51px 0 41px 31px;
+    background: url(../imgs/employee/persontime.png)
+}
+
+#content>.right .bottom ul .li1 h1 {
+    margin-top: 39px;
+    font-size: 70px;
     text-align: center;
-    margin-top: 37px;
-    font-size:60px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 39px;
 }
 
-.right .bottom .left ul .li1 div {
+#content>.right .bottom ul .li1 div {
     text-align: center;
-    font-size:26px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
-}
-
-.right .bottom .left ul .li2 h1 {
-    text-align: center;
-    margin-top: 37px;
-    font-size:60px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
-}
-
-.right .bottom .left ul .li2 div {
-    text-align: center;
-    font-size:26px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
-}
-
-.right .bottom .left ul .li3 h1 {
-    text-align: center;
-    margin-top: 37px;
-    font-size:60px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
-}
-
-.right .bottom .left ul .li3 div {
-    text-align: center;
-    font-size:26px;
-    line-height: 60px;
-    font-family:Microsoft YaHei;
-    font-weight:400;
-    color:rgba(255,255,255,1);
-}
-
-
-.right .bottom .left ul>li{
-    width:133px;
-    height:173px;
-    background:url(../imgs/client/reachstorebg.png)
-}   
-
-
-.echartsContainer{
-    width:100%;
-    height:100%;
-}
-
-#tableHeader {
-    overflow: hidden;
-}
-
-#tableHeader>li {
-    float: left;
     font-size: 28px;
     font-family: Microsoft YaHei;
     font-weight: 400;
-    color: rgba(0, 219, 244, 1);
+    color: rgba(0, 228, 254, 1);
+    line-height: 48px;
+    margin-top: 28px;
 }
 
-.tr1 {
-    padding-left: 30px;
-    float: left;
-    width: 30%;
-    display: flex;
-    align-items: center;
+#content>.right .bottom ul .li2 h1 {
+    margin-top: 39px;
+    font-size: 70px;
+    text-align: center;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    line-height: 39px;
 }
 
-.tr2 {
-    float: left;
-    width: 20%;
-}
-
-.tr3 {
-    float: left;
-    width: 20%;
-}
-
-.tr4 {
-    float: left;
-    width: 15%;
-}
-
-.tr5 {
-    float: left;
-    width: 15%;
-}
-
-.scrollContainer {
-    width: 100%;
-    height: 375px;
-    overflow: hidden;
-    padding-bottom: 60px;
-}
-
-#scrollul {
-    float: left;
-    width: 100%;
-    height: 375px;
-}
-
-#scrollul>li {
-    width: 100%;
-    float: left;
-
+#content>.right .bottom ul .li2 div {
+    text-align: center;
     font-size: 28px;
     font-family: Microsoft YaHei;
     font-weight: 400;
-    line-height: 28px;
-    background:url(../imgs/scrollitemnbg.png) no-repeat;
+    color: rgba(0, 228, 254, 1);
+    line-height: 48px;
+    margin-top: 28px;
+}
 
-    height: 82px;
-    line-height: 82px;
-    margin: 6px 0;
+#content>.right .bottom ul .li3 {
+    flex: auto;
+    padding: 50px 30px 20px 30px;
+}
+
+#content>.right .top .scrollulContainer {
+    height: 100%;
+    width: calc(100% - 120px);
+    overflow: hidden;
+    margin: 0 60px;
+    position: relative;
+}
+
+#content>.right .top .scrollulContainer ul {
+    height: 100%;
+    width: 150%;
+    position: absolute;
+}
+
+#content>.right .top ul>li {
+    position: relative;
+    width: 312px;
+    height: 410px;
+    float: left;
+    margin-left: 60px;
+    margin-top: 56px;
+    background: url(../imgs/employee/scrollItembg.png)
+}
+
+#content>.right .top ul>li .doorNumber {
+    position: absolute;
+    height: 23px;
+    font-size: 24px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
+    color: rgba(0, 228, 254, 1);
+    top: -10px;
+    left: 117px;
+    height: 40px;
+    line-height: 40px;
+    top: -21px;
+}
+
+#content>.right .top #scrollul li:nth-of-type(1) {
+    margin-left: 0px !important;
+}
+
+.doorInfo {
+    height: 100%;
+    width: 100%;
+
+}
+
+.doorInfo .imgContainer {
+    width: 83px;
+    height: 83px;
+    margin-left: 54px;
+}
+
+.doorInfo>div {
+    height: 33.3%;
+    background: url(../imgs/employee/linebg.png) bottom no-repeat;
+    padding-top: 29px;
+}
+
+.doorInfo>div:nth-of-type(3) {
+    background: none;
+}
+
+.doorInfo .imgContainer img {
+    width: 100%;
+    height: 100%;
+}
+
+.doorInfo .line {
+    height: 81px;
+    width: 1px;
+    margin: 0 20px;
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.doorInfo>div>div {
+    float: left;
+    height:83px;
+}
+.doorInfo .doorInfoText{
+    padding-left:15px;
+}
+.doorInfo .doorInfoText div{
+    height:50%;
+}
+.doorInfo .doorInfoText div:nth-of-type(1){
+    display: flex;
+    align-items: flex-start;
+}
+.doorInfo .doorInfoText div:nth-of-type(2){
+    display: flex;
+    align-items: flex-end;
+}
+
+.doorInfoText span {
+    font-size: 20px;
+    font-family: Microsoft YaHei;
+    font-weight: 400;
     color: rgba(255, 255, 255, 1);
+    line-height: 27px;
+}
 
+.icon-nv{
+    color:#e790ee;
+    font-size: 28px !important;
+    float:right;
+    padding-right:10px;
+}
+.icon-nan{
+    color:#09bbfc;
+    font-size: 28px !important;
+    float:right;
+    padding-right:10px;
+}
 
+.employInfo .li2{
+height:1px;
+margin:20px 0;
+
+background:rgba(0,228,254,1);
+opacity:0.5;
 }
