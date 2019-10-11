@@ -55,36 +55,6 @@ VipModule = (function ($, window, document, echarts) {
                         time: "2019:12:11"
                     }],
                     // 客户识别列表
-
-                    scrollUlData: [{
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 0,
-                        "todayCount": 0
-                    }, {
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 0,
-                        "todayCount": 0
-                    }, ],
-                    // 到店统计
-                    arriveStore: {
-                        "appointmentCount": 1,
-                        "moreCount": 1,
-                        "totalCount": 1
-                    },
                     lastedArrive: {
                         "actionType": '0',
                         "appointment": true,
@@ -102,9 +72,27 @@ VipModule = (function ($, window, document, echarts) {
             })
         },
         initData: function () {
-            // 到店统计
+            // vip识别列表
             UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/toStoreStatistics",
+                url: GlobalJsModule.BaseUrl + "/view/vip/latestVipList",
+                //contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                type: 'get',
+                data: {
+                    companyId: companyId,
+                    currentPage: 1,
+                    pageNum: 20
+                },
+                async: false,
+                success: function (res) {
+                    if (res.code === 0) {
+                        vm.arriveStore = res.data;
+                    }
+                }
+            });
+            // 最新客户识别
+            UntilsModule.ajaxRequest({
+                url: GlobalJsModule.BaseUrl + "/view/vip/latestVip",
                 //contentType: "application/json;charset=UTF-8",
                 dataType: "json",
                 type: 'get',
@@ -116,62 +104,6 @@ VipModule = (function ($, window, document, echarts) {
                     if (res.code === 0) {
                         vm.arriveStore = res.data;
                     }
-                }
-            });
-            // 客流统计
-            UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/passengerFlowStatistics",
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                type: 'get',
-                data: {
-                    companyId: companyId
-                },
-                async: false,
-                success: function (res) {
-
-
-                    res.results = [{
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "",
-                        "faceUrl": "",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "",
-                        "sex": 0,
-                        "todayCount": 0
-                    }]
-
-                }
-            });
-            // 最新客户识别列表
-            UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/latestPersonList",
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                type: 'get',
-                data: {
-                    companyId: companyId
-                },
-                async: false,
-                success: function (data) {
-
-                }
-            });
-            // 最新客户识别
-            UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/latestPerson",
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                type: 'get',
-                data: {
-                    companyId: companyId
-                },
-                async: false,
-                success: function (data) {
-
                 }
             });
 

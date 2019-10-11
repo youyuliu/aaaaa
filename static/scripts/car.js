@@ -14,7 +14,7 @@ CarModule = (function ($, window, document, echarts) {
         // echarts
         initEcharts: function () {
             $(function () {
-                window.carNumberOfIn = [130, 82, 92, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29, 30, 14, 10, 130]
+                window.carNumberOfIn = [130, 82, 92, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29, 30, 14, 10, 33]
                 window.carNumberOfOut = [80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29, 130, 82, 92, 31, 14, 90, 10, 82, 93,
                     30,
                     14, 10, 130,

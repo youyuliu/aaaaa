@@ -71,12 +71,12 @@ StaffModule = (function ($, window, document, echarts) {
                 dataType: "json",
                 type: 'post',
                 data: {
-                    companyId: companyId
+                    companyId: companyId,
+                    size: 20
                 },
                 async: false,
                 success: function (res) {
                     if (res.code === 0) {
-                        debugger;
                         console.log(res.data);
                         // vm.scrollUlData= Object.assign({}, res.data)
                         vm.scrollUlData = res.data;

@@ -33,8 +33,9 @@
                         <ul>
                             <li class="li1">
                                 <div class="name"><span>姓名：</span><span v-text="lastedArrive.appointment"></span></div>
-                                <div><span class="icon font_family icon-nv" v-if="lastedArrive.sex===2" v-clock></span><span
-                                        class="icon font_family icon-nan" v-if="lastedArrive.sex===1" v-clock></span></div>
+                                <div><span class="icon font_family icon-nv" v-if="lastedArrive.sex===2"
+                                        v-clock></span><span class="icon font_family icon-nan"
+                                        v-if="lastedArrive.sex===1" v-clock></span></div>
                             </li>
                             <li class="li2">
 
@@ -47,7 +48,7 @@
                             <li class="li4">
 
                                 <div><span>行为识别：</span><span v-text="lastedArrive.actionType"></span></div>
-                                <div><span>时间：</span><span></span v-text="lastedArrive.dateTime"></div>
+                                <div><span>时间：</span><span v-text="lastedArrive.dateTime"></span></div>
                             </li>
                         </ul>
                     </div>
@@ -73,8 +74,10 @@
                         <ul id="scrollul">
                             <li v-for="(item, index) in scrollUlData">
                                 <ul>
-                                    <li class="tr1" v-text='item.name'><img
-                                            style="width:65px;height:65px;margin-right:30px;" src="item.faceUrl" alt="">
+                                    <li class="tr1">
+                                        <img style="width:65px;height:65px;margin-right:30px;" :src="item.faceUrl"
+                                            alt="">
+                                        <span v-text='item.name?item.name:"空"'></span>
                                     </li>
                                     <li class="tr2" v-text="item.actionType"></li>
                                     <li class="tr3" v-text="item.appointment"></li>

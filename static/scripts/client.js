@@ -8,13 +8,8 @@ ClientModule = (function ($, window, document, echarts) {
         thisContext = this;
         this.init = function () {
             this.initVue();
-
             thisContext.initData();
-
-            
-            thisContext.initEcharts();
             this.initScroll();
-
         }
     }
     ClientClass.prototype = {
@@ -22,45 +17,7 @@ ClientModule = (function ($, window, document, echarts) {
             vm = new Vue({
                 el: '#container',
                 data: {
-                    scrollUlData: [{
-                        number: 1,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 2,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 3,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 4,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 5,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 6,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }],
                     // 客户识别列表
-
                     scrollUlData: [{
                         "actionType": '0',
                         "appointment": true,
@@ -145,6 +102,7 @@ ClientModule = (function ($, window, document, echarts) {
                         "moreCount": 1,
                         "totalCount": 1
                     },
+                    // 
                     lastedArrive: {
                         "actionType": '0',
                         "appointment": true,
@@ -162,6 +120,22 @@ ClientModule = (function ($, window, document, echarts) {
             })
         },
         initData: function () {
+            // 最新客户识别列表
+            UntilsModule.ajaxRequest({
+                url: GlobalJsModule.BaseUrl + "/view/customer/latestPersonList",
+                //contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                type: 'get',
+                data: {
+                    companyId: companyId,
+                    currentPage: 1,
+                    pageNum: 20
+                },
+                async: false,
+                success: function (res) {
+                    vm.scrollUlData = res.data.results;
+                }
+            });
             // 到店统计
             UntilsModule.ajaxRequest({
                 url: GlobalJsModule.BaseUrl + "/view/customer/toStoreStatistics",
@@ -189,37 +163,22 @@ ClientModule = (function ($, window, document, echarts) {
                 },
                 async: false,
                 success: function (res) {
-
-
-                    res.results = [{
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "",
-                        "faceUrl": "",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "",
-                        "sex": 0,
-                        "todayCount": 0
-                    }]
-
+                    var inArr = new Array();
+                    var outArr = new Array();
+                    var timeArray = new Array();
+                    res.data.in.forEach(function (v, k, arr) {
+                        inArr.push(Number(v.count));
+                        
+                    })
+                    res.data.out.forEach(function (v, k, arr) {
+                        outArr.push(Number(v.count));
+                        timeArray.push(v.id);
+                    })
+                    debugger;
+                    thisContext.initEcharts(inArr, outArr, timeArray)
                 }
             });
-            // 最新客户识别列表
-            UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/latestPersonList",
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                type: 'get',
-                data: {
-                    companyId: companyId
-                },
-                async: false,
-                success: function (data) {
 
-                }
-            });
             // 最新客户识别
             UntilsModule.ajaxRequest({
                 url: GlobalJsModule.BaseUrl + "/view/customer/latestPerson",
@@ -230,13 +189,13 @@ ClientModule = (function ($, window, document, echarts) {
                     companyId: companyId
                 },
                 async: false,
-                success: function (data) {
-
+                success: function (res) {
+                    vm.lastedArrive = res.data;
+         
                 }
             });
         },
-        initEcharts: function () {
-
+        initEcharts: function (inArr, outArr, timeArray) {
             var option = {
                 color: ['#16A0FF', '#b966f9'],
                 legend: {
@@ -297,20 +256,17 @@ ClientModule = (function ($, window, document, echarts) {
                     },
                     // 设置X轴数据旋转倾斜
                     axisLabel: {
-                        interval: 5 //设置X轴数据间隔几个显示一个，为0表示都显示
+                        interval: 0 //设置X轴数据间隔几个显示一个，为0表示都显示
                     },
                     // boundaryGap值为false的时候，折线第一个点在y轴上
                     boundaryGap: false,
-                    data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
-                        '17', '18', '19', '20', '21', '22', '23', '24'
-                    ]
+                    data: timeArray
                 },
 
                 yAxis: {
                     name: '人',
                     type: 'value',
                     min: 0, // 设置y轴刻度的最小值
-                    max: 200, // 设置y轴刻度的最大值
                     splitNumber: 4, // 设置y轴刻度间隔个数
                     axisLine: {
                         show: false,
@@ -334,10 +290,7 @@ ClientModule = (function ($, window, document, echarts) {
 
                 series: [{
                         name: '进店人数',
-                        data: [130, 82, 92, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29,
-                            30,
-                            14, 10, 130,
-                        ],
+                        data: inArr,
                         type: 'line',
                         // 设置小圆点消失
                         // 注意：设置symbol: 'none'以后，拐点不存在了，设置拐点上显示数值无效
@@ -348,10 +301,7 @@ ClientModule = (function ($, window, document, echarts) {
                     },
                     {
                         name: '出店人数',
-                        data: [80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29, 130, 82, 92, 31, 14, 90, 10, 82, 93,
-                            30,
-                            14, 10, 130,
-                        ],
+                        data: outArr,
                         type: 'line',
                         // 设置小圆点消失
                         // 注意：设置symbol: 'none'以后，拐点不存在了，设置拐点上显示数值无效
@@ -368,22 +318,22 @@ ClientModule = (function ($, window, document, echarts) {
 
 
 
-            var changeOptions = {
-                series: [{
-                        data: [222, 222, 222, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29,
-                            30,
-                            14, 10, 130,
-                        ],
-                    },
-                    {
-                        data: [222, 222, 222, 31, 14, 12, 133, 80, 32, 01, 34, 29, 130, 82, 92, 31, 14, 90, 10, 82, 93,
-                            30,
-                            14, 10, 130,
-                        ],
-                    },
-                ],
-            }
-            eChart.setOption(changeOptions)
+            // var changeOptions = {
+            //     series: [{
+            //             data: [222, 222, 222, 31, 14, 90, 10, 82, 93, 80, 92, 92, 31, 14, 12, 133, 80, 32, 01, 34, 29,
+            //                 30,
+            //                 14, 10, 130,
+            //             ],
+            //         },
+            //         {
+            //             data: [222, 222, 222, 31, 14, 12, 133, 80, 32, 01, 34, 29, 130, 82, 92, 31, 14, 90, 10, 82, 93,
+            //                 30,
+            //                 14, 10, 130,
+            //             ],
+            //         },
+            //     ],
+            // }
+            // eChart.setOption(changeOptions)
         },
         initScroll: function () {
             $(function () {
