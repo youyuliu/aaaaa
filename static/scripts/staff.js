@@ -10,10 +10,10 @@ StaffModule = (function ($, window, document, echarts) {
             this.initVue();
             this.initData();
             this.initScroll();
-
-
-            // thisContext.initEcharts();
-
+            setInterval(function () {
+                console.log("timer")
+                thisContext.initData();
+            }, 1000)
         }
     }
     StaffClass.prototype = {
@@ -27,60 +27,20 @@ StaffModule = (function ($, window, document, echarts) {
                         out: 0
                     },
                     // 员工识别列表
-                    scrollUlData: [{
-                        "list": [{
-                            "actionType": 0,
-                            "age": 0,
-                            "dateTime": "20:22:32",
-                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "licensePlates": [],
-                            "mainFaceUrl": "",
-                            "maxScore": 0.88521428572645,
-                            "name": "",
-                            "position": "",
-                            "sex": 0
-                        }, {
-                            "actionType": 0,
-                            "age": 0,
-                            "dateTime": "20:22:32",
-                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "licensePlates": [],
-                            "mainFaceUrl": "",
-                            "maxScore": 0.88521428572645,
-                            "name": "",
-                            "position": "",
-                            "sex": 0
-                        }, {
-                            "actionType": 0,
-                            "age": 0,
-                            "dateTime": "20:22:32",
-                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
-                            "licensePlates": [],
-                            "mainFaceUrl": "",
-                            "maxScore": 0.88521428572645,
-                            "name": "",
-                            "position": "",
-                            "sex": 0
-                        }],
-                        "locationId": "5d9fdb1ba74a0000250002c2",
-                        "locationName": "西门"
-                    }],
+                    scrollUlData: [],
                     // 最新员工统计
                     theLastStaffInfo: {
-                        actionType: 23232,
+                        actionType: 1,
                         age: 0,
-                        dateTime: "20:22:32",
-                        faceUrl: "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80",
-                        frameUrl: "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                        dateTime: "",
+                        faceUrl: "",
+                        frameUrl: "",
                         licensePlates: [],
                         mainFaceUrl: "",
-                        maxScore: 0.88521428572645,
-                        name: "3242423",
-                        position: "fafafa",
-                        sex: 0,
+                        maxScore: 0,
+                        name: "",
+                        position: "",
+                        sex: 2,
                     },
                     // 按位置统计---echarts
 
@@ -117,7 +77,9 @@ StaffModule = (function ($, window, document, echarts) {
                 success: function (res) {
                     if (res.code === 0) {
                         debugger;
-                        vm.scrollUlData.concat(res.data);
+                        console.log(res.data);
+                        // vm.scrollUlData= Object.assign({}, res.data)
+                        vm.scrollUlData = res.data;
                     }
 
                 }
