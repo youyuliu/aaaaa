@@ -6,7 +6,7 @@ var GlobalJsModule = (function ($, window, document, echarts) {
     GlobalJsClass.prototype = {
 
         BaseUrl: "http://test-look-identify-api.yunshicloud.com", // 后台接口服务路径
-        companyId: "test", //默认是test
+        companyId: "5d9f05fcc0310000490011d3", //默认是test
 
 
         constructor: GlobalJsClass,

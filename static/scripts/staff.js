@@ -9,10 +9,10 @@ StaffModule = (function ($, window, document, echarts) {
         this.init = function () {
             this.initVue();
             this.initData();
-
-            
-            thisContext.initEcharts();
             this.initScroll();
+
+
+            // thisContext.initEcharts();
 
         }
     }
@@ -21,94 +21,76 @@ StaffModule = (function ($, window, document, echarts) {
             vm = new Vue({
                 el: '#container',
                 data: {
-                    scrollUlData: [{
-                        number: 1,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 2,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 3,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 4,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 5,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }, {
-                        number: 6,
-                        name: '2',
-                        appointment: "flajfal",
-                        inOut: '3dfa',
-                        time: "2019:12:11"
-                    }],
-                    // 客户识别列表
-
-                    scrollUlData: [{
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 0,
-                        "todayCount": 0
-                    }, {
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 0,
-                        "todayCount": 0
-                    }, ],
-                    // 到店统计
-                    arriveStore: {
-                        "appointmentCount": 1,
-                        "moreCount": 1,
-                        "totalCount": 1
+                    // 出入统计
+                    statisticsForInOrOut: {
+                        in: 0,
+                        out: 0
                     },
-                    lastedArrive: {
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 2, //1男2女
-                        "todayCount": 0
-                    }
+                    // 员工识别列表
+                    scrollUlData: [{
+                        "list": [{
+                            "actionType": 0,
+                            "age": 0,
+                            "dateTime": "20:22:32",
+                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "licensePlates": [],
+                            "mainFaceUrl": "",
+                            "maxScore": 0.88521428572645,
+                            "name": "",
+                            "position": "",
+                            "sex": 0
+                        }, {
+                            "actionType": 0,
+                            "age": 0,
+                            "dateTime": "20:22:32",
+                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "licensePlates": [],
+                            "mainFaceUrl": "",
+                            "maxScore": 0.88521428572645,
+                            "name": "",
+                            "position": "",
+                            "sex": 0
+                        }, {
+                            "actionType": 0,
+                            "age": 0,
+                            "dateTime": "20:22:32",
+                            "faceUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "frameUrl": "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                            "licensePlates": [],
+                            "mainFaceUrl": "",
+                            "maxScore": 0.88521428572645,
+                            "name": "",
+                            "position": "",
+                            "sex": 0
+                        }],
+                        "locationId": "5d9fdb1ba74a0000250002c2",
+                        "locationName": "西门"
+                    }],
+                    // 最新员工统计
+                    theLastStaffInfo: {
+                        actionType: 23232,
+                        age: 0,
+                        dateTime: "20:22:32",
+                        faceUrl: "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80",
+                        frameUrl: "http://xx-s3gw.watone.com.cn/frames/9d3592d4-b84b-40ff-b86b-89f49d73a826",
+                        licensePlates: [],
+                        mainFaceUrl: "",
+                        maxScore: 0.88521428572645,
+                        name: "3242423",
+                        position: "fafafa",
+                        sex: 0,
+                    },
+                    // 按位置统计---echarts
 
                 }
             })
         },
         initData: function () {
-            // 到店统计
+            // 员工出入统计
             UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/toStoreStatistics",
+                url: GlobalJsModule.BaseUrl + "/view/staff/accessStatistics",
                 //contentType: "application/json;charset=UTF-8",
                 dataType: "json",
                 type: 'get',
@@ -118,13 +100,31 @@ StaffModule = (function ($, window, document, echarts) {
                 async: false,
                 success: function (res) {
                     if (res.code === 0) {
-                        vm.arriveStore = res.data;
+                        vm.statisticsForInOrOut = res.data;
                     }
                 }
             });
-            // 客流统计
+            // 最新员工列表
             UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/passengerFlowStatistics",
+                url: GlobalJsModule.BaseUrl + "/view/staff/lastStaffList",
+                contentType: "application/x-www-form-urlencoded",
+                dataType: "json",
+                type: 'post',
+                data: {
+                    companyId: companyId
+                },
+                async: false,
+                success: function (res) {
+                    if (res.code === 0) {
+                        debugger;
+                        vm.scrollUlData.concat(res.data);
+                    }
+
+                }
+            });
+            // 最新员工识别
+            UntilsModule.ajaxRequest({
+                url: GlobalJsModule.BaseUrl + "/view/staff/latestStaff",
                 //contentType: "application/json;charset=UTF-8",
                 dataType: "json",
                 type: 'get',
@@ -133,26 +133,12 @@ StaffModule = (function ($, window, document, echarts) {
                 },
                 async: false,
                 success: function (res) {
-
-
-                    res.results = [{
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "",
-                        "faceUrl": "",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "",
-                        "sex": 0,
-                        "todayCount": 0
-                    }]
-
+                    vm.theLastStaffInfo = res.data;
                 }
             });
-            // 最新客户识别列表
+            // 按位置统计
             UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/latestPersonList",
+                url: GlobalJsModule.BaseUrl + "/view/staff/statisticsByLocation",
                 //contentType: "application/json;charset=UTF-8",
                 dataType: "json",
                 type: 'get',
@@ -160,22 +146,16 @@ StaffModule = (function ($, window, document, echarts) {
                     companyId: companyId
                 },
                 async: false,
-                success: function (data) {
-
-                }
-            });
-            // 最新客户识别
-            UntilsModule.ajaxRequest({
-                url: GlobalJsModule.BaseUrl + "/view/customer/latestPerson",
-                //contentType: "application/json;charset=UTF-8",
-                dataType: "json",
-                type: 'get',
-                data: {
-                    companyId: companyId
-                },
-                async: false,
-                success: function (data) {
-
+                success: function (res) {
+                    var inArr = new Array();
+                    var outArr = new Array();
+                    var locationArr = new Array();
+                    res.data.forEach(function (v, k, arr) {
+                        inArr.push(v.in);
+                        outArr.push(v.out);
+                        locationArr.push(v.locationName);
+                    })
+                    thisContext.initEcharts(inArr, outArr, locationArr)
                 }
             });
 
@@ -183,7 +163,7 @@ StaffModule = (function ($, window, document, echarts) {
 
 
         },
-        initEcharts: function () {
+        initEcharts: function (inArr, outArr, locationArr) {
 
             var option = {
                 title: {
@@ -237,10 +217,7 @@ StaffModule = (function ($, window, document, echarts) {
                 },
                 xAxis: [{
                     type: 'category',
-                    data: ['一号门',
-                        '二号门',
-                        '三号门',
-                    ], // 只有type: 'category'生效
+                    data: locationArr, // 只有type: 'category'生效
                     axisLine: {
                         show: false,
                         lineStyle: {
@@ -290,7 +267,7 @@ StaffModule = (function ($, window, document, echarts) {
                 series: [{
                         name: "入店人次",
                         type: 'bar',
-                        data: [20, 250, 80],
+                        data: inArr,
                         barWidth: 40, //柱子宽度
                         //barGap: 1, //柱子之间间距
                         itemStyle: {
@@ -302,7 +279,7 @@ StaffModule = (function ($, window, document, echarts) {
                     {
                         name: "出店人次",
                         type: 'bar',
-                        data: [120, 502, 802],
+                        data: outArr,
                         barWidth: 40, //柱子宽度
                         //barGap: 1, //柱子之间间距
                         itemStyle: {
@@ -320,7 +297,7 @@ StaffModule = (function ($, window, document, echarts) {
         initScroll: function () {
 
             $(function () {
-                var timeId = setInterval(play, 3000);
+                var timeId = setInterval(play, 10000);
 
                 function play() {
                     $("#scrollul").animate({
@@ -339,9 +316,19 @@ StaffModule = (function ($, window, document, echarts) {
                     clearInterval(timeId);
                 }, function () {
                     /* Stuff to do when the mouse leaves the element */
-                    timeId = setInterval(play, 3000);
+                    timeId = setInterval(play, 10000);
                 });
             })
+        },
+        utils: {
+            actionType: function (actionType) {
+                if (actionType === 0) {
+                    return "进入"
+                } else {
+
+                    return '离开'
+                }
+            }
         },
         constructor: StaffClass,
 

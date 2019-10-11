@@ -28,28 +28,28 @@
                 </div>
                 <div class="identifyInfoContainer">
                     <div class="imgcontainer2">
-                    <img :src="lastedArrive.faceUrl" alt="">
+                    <img :src="theLastStaffInfo.faceUrl" alt="">
                     </div>
                     <div class="employInfo">
                         <ul>
                             <li class="li1">
-                                <div class="name"><span>姓名：</span><span v-text="lastedArrive.appointment"></span></div>
-                                <div><span class="icon font_family icon-nv" v-if="lastedArrive.sex===2"
+                                <div class="name"><span>姓名：</span><span v-text="theLastStaffInfo.name"></span></div>
+                                <div><span class="icon font_family icon-nv" v-if="theLastStaffInfo.sex===0"
                                         v-clock></span><span class="icon font_family icon-nan"
-                                        v-if="lastedArrive.sex===1" v-clock></span></div>
+                                        v-if="theLastStaffInfo.sex===1" v-clock></span></div>
                             </li>
                             <li class="li2">
 
                             </li>
                             <li class="li3">
-                                <div><span>预约情况：</span><span v-text="lastedArrive.appointment"></span></div>
-                                <div><span>到店类型：</span><span>二次到店</span></div>
+                                <div><span>年龄：</span><span v-text="theLastStaffInfo.age"></span></div>
+                                <div><span>职务：</span><span  v-text="theLastStaffInfo.position">二次到店</span></div>
 
                             </li>
                             <li class="li4">
 
-                                <div><span>行为识别：</span><span v-text="lastedArrive.actionType"></span></div>
-                                <div><span>时间：</span><span></span v-text="lastedArrive.dateTime"></div>
+                                <div><span>行为识别：</span><span v-text="theLastStaffInfo.actionType"></span></div>
+                                <div><span>时间：</span><span v-text="theLastStaffInfo.dateTime"></span ></div>
                             </li>
                         </ul>
                     </div>
@@ -63,203 +63,26 @@
                     </div>
                     <div class="scrollulContainer">
                         <ul id='scrollul'>
-                            <li>
-                                <div class="doorNumber">
-                                    一号门
+                            <li v-for="item in scrollUlData">
+                                <div class="doorNumber" v-text="item.locationName">
                                 </div>
                                 <div class="doorInfo">
-                                    <div class="div1">
+                                    <div class="div1" v-for='item2 in item.list'>
                                         <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
+                                            <img :src="item2.faceUrl" alt="">
                                         </div>
                                         <div class="doorInfoText">
                                             <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
+                                                <span v-text="item2.name"></span>&nbsp;&nbsp;
+                                                <span v-text="StaffModule.utils.actionType(item2.actionType)">进入</span>
                                             </div>
                                             <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div2">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div3">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
+                                                <span v-text="item2.dateTime"></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </li>
-                            <li>
-                                <div class="doorNumber">
-                                    2号门
-                                </div>
-                                <div class="doorInfo">
-                                    <div class="div1">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div2">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div3">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="doorNumber">
-                                    3号门
-                                </div>
-                                <div class="doorInfo">
-                                    <div class="div1">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div2">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div3">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="doorNumber">
-                                    一号门
-                                </div>
-                                <div class="doorInfo">
-                                    <div class="div1">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div2">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="div3">
-                                        <div class="imgContainer">
-                                            <img src="../static/imgs/employee/touxiang.png" alt="">
-                                        </div>
-                                        <div class="doorInfoText">
-                                            <div>
-                                                <span>张三</span>&nbsp;&nbsp;
-                                                <span>进入</span>
-                                            </div>
-                                            <div>
-                                                <span>18:20:20</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-
                         </ul>
                     </div>
                 </div>
@@ -269,11 +92,11 @@
                     </div>
                     <ul>
                         <li class='li1'>
-                            <h1>24</h1>
+                            <h1 v-text='statisticsForInOrOut.in'></h1>
                             <div>入店人次</div>
                         </li>
                         <li class='li2'>
-                            <h1>22</h1>
+                            <h1 v-text="statisticsForInOrOut.out"></h1>
                             <div>出店人次</div>
                         </li>
                         <li class='li3' id='echartsContainer'></li>
