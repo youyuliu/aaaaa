@@ -10,6 +10,11 @@ ClientModule = (function ($, window, document, echarts) {
             this.initVue();
             thisContext.initData();
             this.initScroll();
+
+            setInterval(function () {
+                console.log("timer")
+                thisContext.initData();
+            }, 1000)
         }
     }
     ClientClass.prototype = {
