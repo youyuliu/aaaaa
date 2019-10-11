@@ -324,6 +324,7 @@ body {
 #scrollul>li {
     width: 100%;
     float: left;
+    height:82px;
 
     font-size: 28px;
     font-family: Microsoft YaHei;
@@ -335,10 +336,10 @@ body {
     line-height: 82px;
     margin: 6px 0;
     color: rgba(255, 255, 255, 1);
-
-
 }
-
+#scrollul>li>ul>li{
+    height:82px;
+}
 .icon-nv{
     color:#e790ee;
     font-size: 28px !important;
