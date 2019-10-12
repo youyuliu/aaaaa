@@ -40,8 +40,8 @@
                             <div id="comparecircle">
 
                             </div>
-                            <div class="echartTitle" v-text="VipModule.parseScore(vipUserInfo.maxScore)">
-
+                            <div class="echartTitle" >
+                                相似度
                             </div>
                         </li>
                         <li class="li3"><img :src="vipUserInfo.faceUrl" alt=""></li>
@@ -49,17 +49,13 @@
                     <div class="bottom">
                         <h1>
                             <div class="infolist-item">
-                                <label class="infolist-label">姓名：</label>
-                                <div class="infolist-block" v-text="vipUserInfo.name">
-                                    张三
-                                </div>
+                                <label class="infolist-label" >姓名：<span v-text="vipUserInfo.name"></span></label>
                             </div>
                         </h1>
                         <div class="infolist">
                             <div class="infolist-item">
                                 <label class="infolist-label">性别：</label>
                                 <div class="infolist-block" v-text="vipUserInfo.sex===1?'男':'女'">
-                                    女
                                 </div>
                             </div>
                             <div class="infolist-item">
@@ -116,7 +112,7 @@
                                 <li class="tr1" v-text=""><img :src="item.faceUrl" alt=""><img :src="item.mainFaceUrl"
                                         alt=""></li>
                                 <li class="tr2" v-text="VipModule.parseScore(item.maxScore) "></li>
-                                <li class="tr3" v-text="item.name"></li>
+                                <li class="tr3" :title="item.name?item.name:'暂无'" v-text="item.name?item.name:'暂无'"></li>
                                 <li class="tr4" v-text="item.sex===1?'男':'女'"></li>
                                 <li class="tr5" v-text="item.actionType===1?'进入':'出店'"></li>
                                 <li class="tr6" v-text="item.dateTime"></li>

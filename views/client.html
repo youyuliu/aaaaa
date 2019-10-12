@@ -32,7 +32,7 @@
                     <div class="employInfo">
                         <ul class="liContainer">
                             <li class="li1">
-                                <div class="name"><span>姓名：</span><span v-text="lastedArrive.name"></span></div>
+                                <div class="name"><span>姓名：</span><span  v-text='lastedArrive.name?lastedArrive.name:"暂无"'></span></div>
                                 <div><span class="icon font_family icon-nv" v-if="lastedArrive.sex===2"
                                         v-clock></span><span class="icon font_family icon-nan"
                                         v-if="lastedArrive.sex===1" v-clock></span></div>
@@ -42,7 +42,7 @@
                             </li>
                             <li class="li3">
                                 <div><span>预约情况：</span><span v-text="lastedArrive.appointment?'有预约':'无预约'"></span></div>
-                                <div><span>到店类型：</span><span v-text="lastedArrive.more?'二次到店':'一次到店'"></span></div>
+                                <div><span>到店类型：</span><span v-text="lastedArrive.more?'二次到店':'首次到店'"></span></div>
 
                             </li>
                             <li class="li4">
@@ -78,9 +78,9 @@
                                     <li class="tr1">
                                         <img style="width:65px;height:65px;margin-right:30px;" :src="item.faceUrl"
                                             alt="">
-                                        <span v-text='item.name?item.name:"空"'></span>
+                                        <span v-text='item.name?item.name:"暂无"'></span>
                                     </li>
-                                    <li class="tr2" v-text="item.more?'二次到店':'一次到店'"></li>
+                                    <li class="tr2" v-text="item.more?'二次到店':'首次到店'"></li>
                                     <li class="tr3" v-text="item.appointment?'有预约':'无预约'"></li>
                                     <li class="tr4" v-text="lastedArrive.actionType===1?'进入':'出店'"></li>
                                     <li class="tr5" v-text="item.dateTime"></li>

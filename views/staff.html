@@ -74,7 +74,7 @@
                                         </div>
                                         <div class="doorInfoText">
                                             <div>
-                                                <span v-text="item2.name"></span>&nbsp;&nbsp;
+                                                <span v-text="item2.name?item2.name:'暂无'"></span>&nbsp;&nbsp;
                                                 <span v-text="StaffModule.utils.actionType(item2.actionType)">进入</span>
                                             </div>
                                             <div>

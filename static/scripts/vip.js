@@ -102,8 +102,8 @@ VipModule = (function ($, window, document, echarts) {
                             return v;
                         })
                         vm.vipUserInfo = res.data;
-                        thisContext.initEcharts(Number(res.data.maxScore * 100).toFixed(0));
-
+                        debugger;
+                        thisContext.initEcharts(Number((1-res.data.maxScore) * 100).toFixed(0),Number(res.data.maxScore * 100).toFixed(0));
                     }
                 }
             });
@@ -111,7 +111,7 @@ VipModule = (function ($, window, document, echarts) {
 
 
         },
-        initEcharts: function (echartsData) {
+        initEcharts: function (echartsData1,echartsData2) {
 
             var faultPieEchart = echarts.init(document.getElementById('comparecircle')); //初始化echarts实例
             var faultPieOption = {
@@ -123,7 +123,7 @@ VipModule = (function ($, window, document, echarts) {
                     radius: ['100%', '93%'],
                     center: ['50%', '50%'],
                     data: [{
-                        value: 75,
+                        value: echartsData1,
                         name: 'invisible',
                         itemStyle: {
                             normal: {
@@ -139,7 +139,7 @@ VipModule = (function ($, window, document, echarts) {
                             }
                         },
                     }, {
-                        value: echartsData,
+                        value: echartsData2,
                         labelLine: {
                             normal: {
                                 show: false
