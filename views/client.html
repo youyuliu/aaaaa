@@ -20,7 +20,7 @@
         <div id="content">
             <div class="left fl">
                 <div class="imgcontainer">
-                        <img :src="lastedArrive.frameUrl" alt="">
+                    <img :src="lastedArrive.frameUrl" alt="">
                 </div>
                 <div class="identifyInfo">
                     识别客户信息
@@ -47,7 +47,8 @@
                             </li>
                             <li class="li4">
 
-                                <div><span>行为识别：</span><span v-text="lastedArrive.actionType===1?'进入':'出店'"></span></div>
+                                <div><span>行为识别：</span><span v-text="lastedArrive.actionType===1?'进入':'出店'"></span>
+                                </div>
                                 <div><span>时间：</span><span v-text="lastedArrive.dateTime"></span></div>
                             </li>
                         </ul>
@@ -80,8 +81,8 @@
                                         <span v-text='item.name?item.name:"空"'></span>
                                     </li>
                                     <li class="tr2" v-text="item.more?'二次到店':'一次到店'"></li>
-                                    <li class="tr3"  v-text="item.appointment?'有预约':'无预约'"></li>
-                                    <li class="tr4"  v-text="lastedArrive.actionType===1?'进入':'出店'"></li>
+                                    <li class="tr3" v-text="item.appointment?'有预约':'无预约'"></li>
+                                    <li class="tr4" v-text="lastedArrive.actionType===1?'进入':'出店'"></li>
                                     <li class="tr5" v-text="item.dateTime"></li>
                                 </ul>
                             </li>
@@ -105,7 +106,7 @@
                         </div>
                         <ul>
                             <li class='li1'>
-                                <h1><span v-clock>{{arriveStore.appointmentCount}}</span></h1>
+                                <h1><span v-clock>{{arriveStore.totalCount}}</span></h1>
                                 <div>今日到店</div>
                             </li>
                             <li class='li2'>
@@ -113,7 +114,7 @@
                                 <div>二次到店</div>
                             </li>
                             <li class='li3'>
-                                <h1><span v-clock>{{arriveStore.totalCount}}</span></h1>
+                                <h1><span v-clock>{{arriveStore. appointmentCount}}</span></h1>
                                 <div>预约到店</div>
                             </li>
                         </ul>
