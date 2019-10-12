@@ -22,25 +22,35 @@
                 <div class="info">
                     VIP人像识别
                 </div>
-
+                <!-- actionType: 2
+                adviserName: ""
+                business: ""
+                dateTime: "14:56:06"
+                faceUrl: "http://xx-s3gw.watone.com.cn/frames/b1142228-c903-47f8-be81-7e8bddb0558c"
+                frameUrl: "http://xx-s3gw.watone.com.cn/photos/20de2270-649d-4884-be23-0bb0c6e64025"
+                licensePlates: ["{"value":"111"}"]
+                mainFaceUrl: "http://xx-s3gw.watone.com.cn/frames/38dc6b27-1bf5-4210-8dca-d6285aeaad8c"
+                maxScore: 0.7043982062180432
+                name: "3333wwww"
+                sex: 1 -->
                 <div class="vipinfo">
                     <ul class="top">
-                        <li class="li1"><img src="../static/imgs/employee/touxiang.png" alt=""></li>
+                        <li class="li1"><img :src="vipUserInfo.mainFaceUrl" alt=""></li>
                         <li class="li2" id="">
                             <div id="comparecircle">
 
                             </div>
-                            <div class="echartTitle">
-                                相似度
+                            <div class="echartTitle" v-text="VipModule.parseScore(vipUserInfo.maxScore)">
+
                             </div>
                         </li>
-                        <li class="li3"><img src="../static/imgs/employee/touxiang.png" alt=""></li>
+                        <li class="li3"><img :src="vipUserInfo.faceUrl" alt=""></li>
                     </ul>
                     <div class="bottom">
                         <h1>
                             <div class="infolist-item">
                                 <label class="infolist-label">姓名：</label>
-                                <div class="infolist-block">
+                                <div class="infolist-block" v-text="vipUserInfo.name">
                                     张三
                                 </div>
                             </div>
@@ -48,45 +58,36 @@
                         <div class="infolist">
                             <div class="infolist-item">
                                 <label class="infolist-label">性别：</label>
-                                <div class="infolist-block">
+                                <div class="infolist-block" v-text="vipUserInfo.sex===1?'男':'女'">
                                     女
                                 </div>
                             </div>
                             <div class="infolist-item">
                                 <label class="infolist-label">车牌：</label>
                                 <div class="infolist-block">
-                                    <div>
-
-                                        京AY8255
+                                    <div v-for="item in vipUserInfo.licensePlates">
+                                        {{item.value}}
                                     </div>
-                                    <div>
-
-                                        京AY8255
-                                    </div>
-                                    </div>
+                                </div>
                             </div>
                             <div class="infolist-item">
                                 <label class="infolist-label">办理：</label>
-                                <div class="infolist-block">
-                                        车辆抛光
+                                <div class="infolist-block" v-text="vipUserInfo.business">
                                 </div>
                             </div>
                             <div class="infolist-item">
                                 <label class="infolist-label">接待：</label>
-                                <div class="infolist-block">
-                                    马六
+                                <div class="infolist-block" v-text="vipUserInfo.adviserName">
                                 </div>
                             </div>
                             <div class="infolist-item">
                                 <label class="infolist-label">行为：</label>
-                                <div class="infolist-block">
-                                    进入
+                                <div class="infolist-block" v-text="vipUserInfo.actionType===1?'进店':'出店'">
                                 </div>
                             </div>
                             <div class="infolist-item">
                                 <label class="infolist-label">时间：</label>
-                                <div class="infolist-block">
-                                    18:10:10
+                                <div class="infolist-block" v-text="vipUserInfo.dateTime">
                                 </div>
                             </div>
                         </div>
@@ -110,15 +111,15 @@
                 <div class="scrollContainer">
 
                     <ul id="scrollul">
-                        <li v-for="(item index ) in scrollUlData">
+                        <li v-for="(item,index) in scrollUlData">
                             <ul>
                                 <li class="tr1" v-text=""><img src="../static/imgs/employee/touxiang.png" alt=""><img
                                         src="../static/imgs/employee/touxiang.png" alt=""></li>
-                                <li class="tr2" v-text=''>1%</li>
-                                <li class="tr3">张三</li>
-                                <li class="tr4">男</li>
-                                <li class="tr5">进入</li>
-                                <li class="tr6">12:20:20</li>
+                                <li class="tr2" v-text="VipModule.parseScore(item.maxScore) "></li>
+                                <li class="tr3" v-text="item.name"></li>
+                                <li class="tr4" v-text="item.sex===1?'男':'女'"></li>
+                                <li class="tr5" v-text="item.actionType===1?'进入':'出店'"></li>
+                                <li class="tr6" v-text="item.dateTime"></li>
                             </ul>
                         </li>
 
@@ -136,7 +137,7 @@
     <script src="../static/scripts/common/utils.js"></script>
     <script src="../static/scripts/vip.js"></script>
     <script>
-        
+
     </script>
 </body>
 

@@ -54,19 +54,8 @@ VipModule = (function ($, window, document, echarts) {
                         inOut: '3dfa',
                         time: "2019:12:11"
                     }],
-                    // 客户识别列表
-                    lastedArrive: {
-                        "actionType": '0',
-                        "appointment": true,
-                        "dateTime": "2019.12.09",
-                        "faceUrl": "../static/imgs/employee/datouxiang.png",
-                        "frameUrl": "",
-                        "maxScore": 0,
-                        "more": true,
-                        "name": "fafafa",
-                        "sex": 2, //1男2女
-                        "todayCount": 0
-                    }
+                    // vip客户对比
+                    vipUserInfo: {}
 
                 }
             })
@@ -86,7 +75,9 @@ VipModule = (function ($, window, document, echarts) {
                 async: false,
                 success: function (res) {
                     if (res.code === 0) {
-                        vm.arriveStore = res.data;
+                        vm.scrollUlData = res.data.results;
+
+                        console.log(vm.scrollUlData);
                     }
                 }
             });
@@ -102,7 +93,13 @@ VipModule = (function ($, window, document, echarts) {
                 async: false,
                 success: function (res) {
                     if (res.code === 0) {
-                        vm.arriveStore = res.data;
+                        res.data.licensePlates = res.data.licensePlates.map(function (v, k, arr) {
+                            v = JSON.parse(v)
+                            return v;
+                        })
+                        vm.vipUserInfo = res.data;
+                        console.log(vm.vipUserInfo)
+
                     }
                 }
             });
@@ -113,8 +110,8 @@ VipModule = (function ($, window, document, echarts) {
         initEcharts: function () {
 
             var faultPieEchart = echarts.init(document.getElementById('comparecircle')); //初始化echarts实例
-            var faultPieOption = option = {
-                // backgroundColor: '#091018',
+            var faultPieOption = {
+                backgroundColor: '#091018',
                 series: {
                     type: 'pie',
                     clockWise: false,
@@ -187,7 +184,7 @@ VipModule = (function ($, window, document, echarts) {
         initScroll: function () {
 
             $(function () {
-                var timeId = setInterval(play, 3000);
+                var timeId = setInterval(play, 10000);
 
                 function play() {
                     $("#scrollul").animate({
@@ -206,10 +203,15 @@ VipModule = (function ($, window, document, echarts) {
                     clearInterval(timeId);
                 }, function () {
                     /* Stuff to do when the mouse leaves the element */
-                    timeId = setInterval(play, 3000);
+                    timeId = setInterval(play, 10000);
                 });
             })
 
+        },
+
+        parseScore: function (num) {
+            var percent = Number(num * 100).toFixed(2) + "%";
+            return percent;
         },
         constructor: VipClass,
 

@@ -259,13 +259,13 @@ CarModule = (function ($, window, document, echarts) {
         // 列表滚动
         initScroll: function () {
             $(function () {
-                timeId = setInterval(play, 3000);
+                timeId = setInterval(play, 10000);
                 $("#scrollul").hover(function () {
                     /* Stuff to do when the mouse enters the element */
                     clearInterval(timeId);
                 }, function () {
                     /* Stuff to do when the mouse leaves the element */
-                    timeId = setInterval(play, 3000);
+                    timeId = setInterval(play, 10000);
                 });
                 function play() {
                     $("#scrollul").animate({

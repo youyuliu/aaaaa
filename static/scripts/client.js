@@ -342,7 +342,7 @@ ClientModule = (function ($, window, document, echarts) {
         },
         initScroll: function () {
             $(function () {
-                var timeId = setInterval(play, 3000);
+                var timeId = setInterval(play, 10000);
 
                 function play() {
                     $("#scrollul").animate({
@@ -361,7 +361,7 @@ ClientModule = (function ($, window, document, echarts) {
                     clearInterval(timeId);
                 }, function () {
                     /* Stuff to do when the mouse leaves the element */
-                    timeId = setInterval(play, 3000);
+                    timeId = setInterval(play, 10000);
                 });
             })
         },
