@@ -14,7 +14,7 @@ ClientModule = (function ($, window, document, echarts) {
             setInterval(function () {
                 console.log("timer")
                 thisContext.initData();
-            }, 1000)
+            }, 10000)
         }
     }
     ClientClass.prototype = {
