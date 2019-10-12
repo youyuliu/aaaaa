@@ -10,6 +10,10 @@ VipModule = (function ($, window, document, echarts) {
             this.initVue();
             this.initData();
             this.initScroll();
+            setInterval(function () {
+                console.log("timer")
+                thisContext.initData();
+            }, 1000)
         }
     }
     VipClass.prototype = {
@@ -98,7 +102,7 @@ VipModule = (function ($, window, document, echarts) {
                             return v;
                         })
                         vm.vipUserInfo = res.data;
-                        console.log(vm.vipUserInfo)
+                        thisContext.initEcharts(Number(res.data.maxScore * 100).toFixed(0));
 
                     }
                 }
@@ -107,11 +111,10 @@ VipModule = (function ($, window, document, echarts) {
 
 
         },
-        initEcharts: function () {
+        initEcharts: function (echartsData) {
 
             var faultPieEchart = echarts.init(document.getElementById('comparecircle')); //初始化echarts实例
             var faultPieOption = {
-                backgroundColor: '#091018',
                 series: {
                     type: 'pie',
                     clockWise: false,
@@ -136,7 +139,7 @@ VipModule = (function ($, window, document, echarts) {
                             }
                         },
                     }, {
-                        value: 25,
+                        value: echartsData,
                         labelLine: {
                             normal: {
                                 show: false
@@ -210,7 +213,7 @@ VipModule = (function ($, window, document, echarts) {
         },
 
         parseScore: function (num) {
-            var percent = Number(num * 100).toFixed(2) + "%";
+            var percent = Number(num * 100).toFixed(0) + "%";
             return percent;
         },
         constructor: VipClass,
