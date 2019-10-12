@@ -113,8 +113,8 @@
                     <ul id="scrollul">
                         <li v-for="(item,index) in scrollUlData">
                             <ul>
-                                <li class="tr1" v-text=""><img src="../static/imgs/employee/touxiang.png" alt=""><img
-                                        src="../static/imgs/employee/touxiang.png" alt=""></li>
+                                <li class="tr1" v-text=""><img :src="item.faceUrl" alt=""><img :src="item.mainFaceUrl"
+                                        alt=""></li>
                                 <li class="tr2" v-text="VipModule.parseScore(item.maxScore) "></li>
                                 <li class="tr3" v-text="item.name"></li>
                                 <li class="tr4" v-text="item.sex===1?'男':'女'"></li>

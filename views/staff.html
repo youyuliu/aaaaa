@@ -20,7 +20,7 @@
         <div id="content">
             <div class="left fl">
                 <div class="imgcontainer">
-                    <img src="../static/imgs/bjt.jpg" alt="" srcset="">
+                    <img :src="theLastStaffInfo.frameUrl" alt="">
                 </div>
                 <div class="identifyInfo">
                     识别员工信息
@@ -28,7 +28,7 @@
                 </div>
                 <div class="identifyInfoContainer">
                     <div class="imgcontainer2">
-                    <img :src="theLastStaffInfo.faceUrl" alt="">
+                        <img :src="theLastStaffInfo.faceUrl" alt="">
                     </div>
                     <div class="employInfo">
                         <ul>
@@ -43,13 +43,14 @@
                             </li>
                             <li class="li3">
                                 <div><span>年龄：</span><span v-text="theLastStaffInfo.age"></span></div>
-                                <div><span>职务：</span><span  v-text="theLastStaffInfo.position">二次到店</span></div>
+                                <div><span>职务：</span><span v-text="theLastStaffInfo.position">二次到店</span></div>
 
                             </li>
                             <li class="li4">
 
-                                <div><span>行为识别：</span><span v-text="theLastStaffInfo.actionType===1?'入':'出'"></span></div>
-                                <div><span>时间：</span><span v-text="theLastStaffInfo.dateTime"></span ></div>
+                                <div><span>行为识别：</span><span v-text="theLastStaffInfo.actionType===1?'入':'出'"></span>
+                                </div>
+                                <div><span>时间：</span><span v-text="theLastStaffInfo.dateTime"></span></div>
                             </li>
                         </ul>
                     </div>

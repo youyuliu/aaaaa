@@ -179,7 +179,6 @@ ClientModule = (function ($, window, document, echarts) {
                         outArr.push(Number(v.count));
                         timeArray.push(v.id);
                     })
-                    debugger;
                     thisContext.initEcharts(inArr, outArr, timeArray)
                 }
             });
