@@ -78,8 +78,11 @@ CarModule = (function ($, window, document, echarts) {
                     var outArr = res.data.out.map(function (v, k, arr) {
                         return v.count
                     })
+                    var ids = res.data.out.map(function (v, k, arr) {
+                        return v.id
+                    })
 
-                    thisContext.initEcharts1(inArr, outArr)
+                    thisContext.initEcharts1(inArr,outArr,ids)
                 }
             });
             // 店内车流统计
@@ -96,12 +99,15 @@ CarModule = (function ($, window, document, echarts) {
                     var echartsData = res.data.count.map(function (v, k, arr) {
                         return v.count
                     })
-                    thisContext.initEcharts2(echartsData)
+                    var ids = res.data.count.map(function (v, k, arr) {
+                        return v.id
+                    })
+                    thisContext.initEcharts2(echartsData,ids)
                 }
             });
         },
         // echarts
-        initEcharts1: function (inArr, outArr) {
+        initEcharts1: function (inArr, outArr,ids) {
             $(function () {
                 window.carNumberOfIn = inArr,
                     window.carNumberOfOut = outArr
@@ -169,16 +175,13 @@ CarModule = (function ($, window, document, echarts) {
                         },
                         // boundaryGap值为false的时候，折线第一个点在y轴上
                         boundaryGap: false,
-                        data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
-                            '17', '18', '19', '20', '21', '22', '23'
-                        ]
+                        data: ids
                     },
 
                     yAxis: {
                         name: '辆',
                         type: 'value',
                         min: 0, // 设置y轴刻度的最小值
-                        max: 200, // 设置y轴刻度的最大值
                         splitNumber: 4, // 设置y轴刻度间隔个数
                         axisLine: {
                             show: false,
@@ -231,7 +234,7 @@ CarModule = (function ($, window, document, echarts) {
 
             })
         },
-        initEcharts2: function (echartsData) {
+        initEcharts2: function (echartsData,ids) {
             var option2 = {
                 color: ['#00E4FE'],
                 legend: {
@@ -294,16 +297,13 @@ CarModule = (function ($, window, document, echarts) {
                     },
                     // boundaryGap值为false的时候，折线第一个点在y轴上
                     boundaryGap: false,
-                    data: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16',
-                        '17', '18', '19', '20', '21', '22', '23'
-                    ]
+                    data: ids
                 },
 
                 yAxis: {
                     name: '辆',
                     type: 'value',
                     min: 0, // 设置y轴刻度的最小值
-                    max: 200, // 设置y轴刻度的最大值
                     splitNumber: 4, // 设置y轴刻度间隔个数
                     axisLine: {
                         show: false,
