@@ -24,7 +24,7 @@
 
         <div id="center" class="clearfix">
             <div class="left fl">
-                <img src="../static/imgs/bjt.jpg" alt="" srcset="">
+                <img :src="latestCar.frameUrl" alt="" srcset="">
             </div>
             <div class="right fr main">
                 <div class="info">
@@ -43,11 +43,11 @@
                     <ul id="scrollul">
                         <li v-for='(item,index) in scrollUlData'>
                             <ul>
-                                <li class="tr1" v-clock>{{item.number}}</li>
-                                <li class="tr2" v-clock>{{item.name}}</li>
-                                <li class="tr3" v-clock>{{item.appointment}}</li>
-                                <li class="tr4" v-clock>{{item.inOut}}</li>
-                                <li class="tr5" v-clock>{{item.time}}</li>
+                                <li class="tr1" v-text='item.plateNumber?item.plateNumber:"暂无"'></li>
+                                <li class="tr2"  v-text='item.name?item.name:"暂无"'></li>
+                                <li class="tr3" v-text='item.appointment===1?"有预约":"无预约"'></li>
+                                <li class="tr4"  v-text="item.actionType===1?'进入':'离开'">{{}}</li>
+                                <li class="tr5" v-text='item.dateTime?item.dateTime:"暂无"'></li>
                             </ul>
                         </li>
                     </ul>
@@ -62,15 +62,15 @@
                 </div>
                 <ul>
                     <li>
-                        <div class="div1">24</div>
-                        <div class="div2">进店车辆</div>
+                        <div class="div1" v-text='carStatistics.inCount'></div>
+                        <div class="div2" >进店车辆</div>
                     </li>
                     <li>
-                        <div class="div1">24</div>
+                        <div class="div1" v-text='carStatistics.outCount'></div>
                         <div class="div2">离店车辆</div>
                     </li>
                     <li>
-                        <div class="div1">24</div>
+                        <div class="div1" v-text='carStatistics.moreInCount'></div>
                         <div class="div2">预约车辆</div>
                     </li>
                 </ul>
