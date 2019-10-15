@@ -67,8 +67,8 @@ body {
 .imgcontainer {
     position: relative;
     z-index: -1;
-    width: 590px;
-    height: 480px;
+    width: 589px;
+    height: 479px;
 }
 
 .identifyInfo {
